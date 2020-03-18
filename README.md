@@ -2,17 +2,19 @@
 
 The module challenge is the afternoon project or assignment that students work through independently. This expands on the guided project completed earlier with the instructor.
 
-## [Enter sprint name here]
+## Advanced CSS and JavaScript
 
-## [Enter module name here]
+## JavaScript Foundations
 
 ## Objectives
 
-- Include each of the objectives from the module here.
-- Keeping the objectives here for reference will
-- be useful for the instructor composing the module challenge,
-- as well as for the student completing the challenge.
-
+- use let, const, var and demonstrate their differences.
+- understand and be able to use different operators.
+- write a basic for loop / while loop.
+- write control flow using if/else statements.
+- use function declarations, expressions, and arrow.
+functions and describe their differences
+  
 ## Introduction
 
 Carefully explain what the student will do in the challenge.
@@ -69,11 +71,31 @@ If you're including tests, describe how to run the tests and any setup required.
 
 - Instructions
 
-## FAQs
+## Testing FAQ
 
-**What should I include in this section?**
+<img alt='instructions screenshot' src='./instructions.png'>
 
-*Include the answers to frequently asked questions as they come up. If it is a new module challenge, try to answer a few questions you anticipate students asking. Think ahead to potentional roadblocks for an amateur.*
+**What are Tests?**
+
+- Lambda School staff members use tests to algorithmically check for required elements in a code file. For example, a test for the question "`console.log()` "hello [name]" using a variable `name` to hold the name" (not a question you will ever be asked, but I digress), might pass **if** your code includes a variable called `name` **and if** that variable was created with `const` **and** **if** `console.log` is called. Additional parameters could require that this code doesn't exceed 2 lines.
+- Your tests work similarly, with more complex conditionals for what is considered passing and what is considered failing. These tests and associated error messages are meant to help you by providing informative error messages that are specific to the requirements of your project.
+- Read more about testing frameworks [here](https://blog.bitsrc.io/top-javascript-testing-frameworks-in-demand-for-2019-90c76e7777e9) including how testing can be used at scale. Lambda School uses Mocha to test in JavaScript.
+
+**How do I run tests in terminal?**
+
+- Run tests by typing `npm run test:watch`.
+- Testing in Terminal can be done in the terminal utility or VS code
+
+**How do I run tests in my browser?**
+
+- Open `index.html`
+- You should see the following at first with failed tests and error messages
+
+<img alt='failing tests' src='./FailingTests.png'> 
+
+- Once your code is working you will see tests passing and can click on tests to view the code which made the test pass.
+
+<img alt='passing tests' src='./PassingTests.png'>
 
 ## Resources
 
