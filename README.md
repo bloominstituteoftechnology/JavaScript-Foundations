@@ -63,9 +63,9 @@ After you have completed the requirements, try any of the following challenges. 
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge `<firstName-lastName>` branch into master. **Please don't merge your own pull request**
-- [ ] Add your TL as a reviewer on the pull-request
-- [ ] Your TL will count the project as complete by merging the branch back into master.
+1. [ ] Submit a Pull-Request to merge `<firstName-lastName>` branch into master. **Please don't merge your own pull request**
+2. [ ] Add your TL as a reviewer on the pull-request
+3. [ ] Your TL will count the project as complete by merging the branch back into master.
 
 ## Resources
 
