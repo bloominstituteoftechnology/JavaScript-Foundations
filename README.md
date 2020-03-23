@@ -17,75 +17,60 @@ functions and describe their differences
   
 ## Introduction
 
-Carefully explain what the student will do in the challenge.
+Today you'll build a mortgage rate calculator that runs in the console. As you learned today, JavaScript is great for adding functionality and interactivity to a webpage. In our exercises today we won't be working with the visual part of the webpage, but the work you do here could be combined with HTML and CSS to create a fully functioning single page application that was.
 
-Explain the "why" behind the challenge. Homework for the sake of homework isn't motivating. 
+The formula for a monthly mortgage payment is as follows:
 
-The module challenge should be the most practical application of the lesson content. It should represent the task or set of tasks that would best prepare the student for an analogous (and likely) real-world scenario.
+```
+M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
+```
 
-As you provide a clear overview of the module challenge, make certain that the student (not just you) comprehends the relevance of this challenge in helping them realize their own goals of professional development. **It's vital** they understand how this is applicable in the workplace.
+In order to find your monthly payment amount "M,” you need to plug in the following three numbers from your loan:
 
-## Completion requirements
+`P` = Principal amount (the total amount borrowed)
+`I` = Interest rate on the mortgage
+`N` = Number of periods (monthly mortgage payments)
 
-Here you'll describe the features and tasks that the student will need to complete in order to finish the module challenge.
+Exercises are outlined in the `index.js` file and walk you through a series of steps for building a robust and functional mortgage calculator.
 
-Provide all necessary detail in either paragraph form,
-
-1. using
-2. a
-3. numbered
-4. list,
-- [ ]  or
-- [ ]  with
-- [ ]  a
-- [ ]  checklist.
-
-Whatever manner most effectively communicates the information (consider whether a specific sequence is required or if illustrating a clear visual hierarchy would be beneficial).
-
-## Stretch goals
-
-Describe the tasks and features that would demonstrate a student's exceptional mastery of these principles — going above and beyond — but that exceeds what is required by the minimum expectations of the module challenge.
-
-You can do this with full paragraphs or by using a checklist.
-
-- [ ]  or
-- [ ]  by
-- [ ]  using
-- [ ]  a
-- [ ]  checklist
+Check out the resources below for more a step by step walkthrough of this math, and to see a nicely designed mortgage calculator web app. Believe it or not, the backend you write today could power a beautiful site like that!
 
 ## Instructions
 
-You may wish to include an ordered list of step-by-steps instructions to guide the student 
+### Task 1: Set up Project
 
-1. through
-2. a 
-3. sequential
-4. process.
+Using VSCode and Command Line:
 
-## Tests
+1. Fork repo and add TL as collaborator on Github.
+2. Clone your fork (not Lambda's repo by mistake!).
+3. `cd` into your newly cloned repository.
+4. Create a new branch by typing `git checkout -b <firstName-lastName>`.
 
-If you're including tests, describe how to run the tests and any setup required. Be as detailed as possible – testing is an area many of our students struggle with.
+### Task 2: Complete MVP Requirements
 
-> Test 1
+Find the `index.js` file and complete the tasks as written. Your final product should be a function called `variableInterestRate` that accepts a `principal`, `interest rate`, `mortgage length`, and `credit score` and returns 10 different options of monthly payments.
 
-- Instructions
+### Task 3: Stretch Goals
 
-## Testing
+After you have completed the requirements, try any of the following challenges. As always, note that these may require additional research beyond what you learned in this module.
+
+- [ ] Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spend on housing
+-  [ ] Build a third calculator that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford
+- [ ] Explore using `window.prompt()` to allow a user to input parameters in the browser
+- [ ] Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!)
 
 ## Submission format
 
-Describe how the student should deliver the completed challenge. If it's step-by-step,
+Follow these steps for completing your project.
 
-1. include
-2. a
-3. numbered
-4. list.
+- [ ] Submit a Pull-Request to merge `<firstName-lastName>` branch into master. **Please don't merge your own pull request**
+- [ ] Add your TL as a reviewer on the pull-request
+- [ ] Your TL will count the project as complete by merging the branch back into master.
 
-## Grading rubric
+## Resources
 
-If you've prepared a grading rubric that will be used to evaluate the quality of a student's work on your module challenge assignment, include any instructions or relevant links below.
+🧮 [Detailed Walk-through of Mortgage Calculations](https://www.valuepenguin.com/mortgages/mortgage-payments-calculator)
 
-[Grading rubric](example)
+👀 [Mortgage Calculator Web App for Inspiration](https://www.bankrate.com/calculators/mortgages/mortgage-calculator.aspx)
 
-[Module challenge grading rubric](https://www.notion.so/e7b32e56ebad4f57b3521efb886f4508)
+🤟 [window.prompt for Stretch Goals](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
