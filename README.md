@@ -21,6 +21,9 @@ Today you'll build a mortgage rate calculator that runs in the console. As you l
 
 The formula for a monthly mortgage payment is as follows:
 
+![calculation](https://tk-assets.lambdaschool.com/b515edce-5acc-46b9-8194-8d407469771f_ScreenShot2020-04-07at3.29.59PM.png)
+
+Or, in plain text:
 ```
 M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
 ```
