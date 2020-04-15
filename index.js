@@ -36,7 +36,16 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
+let monthlyInterestRate = interestRate/12;
+  console.log(monthlyInterestRate);
 
+let numerator = Math.pow(1 + (monthlyInterestRate), periods)*monthlyInterestRate;
+ console.log(numerator);
+
+let denominator = Math.pow((1 + (monthlyInterestRate)), periods)-1;
+ console.log(denominator);
+
+monthlyRate = principal*(numerator/denominator);
 
 
 // 🏡 Task 3: Function
