@@ -19,7 +19,11 @@ Create a variable called `monthlyInterestRate` and give it the value of interest
 Create another variable called `periods` and give it the value of years*12.
 */
 
+const monthlyInterestRate = (interestRate/12)*principal;
+  console.log(monthlyInterestRate);
 
+let periods = (years)*12;
+ console.log(periods);
 
 
 // 🏡 Task 2: Harder Math
