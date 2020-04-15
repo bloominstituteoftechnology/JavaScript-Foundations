@@ -54,7 +54,11 @@ monthlyRate = principal*(numerator/denominator);
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-
+function mortgageCalculator(name, principal, interestRate, years,){
+    console.log(`${name} your monthly mortgage is ${monthlyRate}`)
+  }
+  
+  mortgageCalculator("Oscar", 200000, 0.05, 30);
 
 
 
