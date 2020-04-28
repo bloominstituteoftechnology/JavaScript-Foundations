@@ -5,7 +5,7 @@
 */
 
 
-
+console.log(10+20);
 
 
 // 🏡 Task 1.5: Simple Math
