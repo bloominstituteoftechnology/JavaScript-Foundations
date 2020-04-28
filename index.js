@@ -3,15 +3,15 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
-
+Setting up Project
 
 
 
 
 // 🏡 Task 1.5: Simple Math
-/* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate. 
+/* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate.
 
-Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
+Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12.
 
 Create another variable called `periods` and give it the value of years*12.
 */
@@ -22,7 +22,7 @@ Create another variable called `periods` and give it the value of years*12.
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe to run calculations on your numbers. Save the final value into a variable called monthlyRate.
 
-Hint: while these calculations can be done in one line, it might be helpful to create a variable called "numerator" to calculate the numerator, and another called "denominator" to calculate the denominator 
+Hint: while these calculations can be done in one line, it might be helpful to create a variable called "numerator" to calculate the numerator, and another called "denominator" to calculate the denominator
 
 Hint #2: you'll need to use the `math` object for parts of this calculation!
 
