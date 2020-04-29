@@ -29,8 +29,8 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
-
-
+monthlyInterestRate = principal [  ( 1 + interestRate )*periods ] / [ ( 1 + interestRate )^periods - 1 ]
+monthlyInterestRate()
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
@@ -38,6 +38,9 @@ When your math is correct, monthlyRate will equal 1073.64
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
+function mortgageCalculator() 
+monthlyInterestRate = principal [  ( 1 + interestRate )*periods ] / [ ( 1 + interestRate )^periods - 1 ]
+monthlyInterestRate();
 
 
 
@@ -50,7 +53,7 @@ mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 */
 
 
-
+function mortgageCalculator(200000, 0.05, 30);
 
 
 // 🏡 Task 5: Conditionals
