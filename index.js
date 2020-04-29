@@ -149,6 +149,34 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
+function variableInterestRate(p, int, n) {
+   
+    let periods = n*12;
+    let name = "Emily";
+
+    
+    // wall
+
+    let currentInterest = int - 0.02;
+    
+    //Okay it asks for ten but only shows 9, so going with the 9 it shows as that matches the 2% it also asks for. 
+    for(j=0; j<9; j++) {
+
+        let monthlyInterestRate = currentInterest/12;
+
+        let numerator = monthlyInterestRate*Math.pow(1 + monthlyInterestRate,periods);
+        let denominator = Math.pow(1+monthlyInterestRate,periods) - 1;
+
+        let monthlyRate = p *(numerator/denominator);
+
+        console.log(name +", with an interest rate of " +Math.round(currentInterest*1000)/1000 + ", your monthly rate is $" + Math.round(monthlyRate));
+        
+
+        currentInterest = currentInterest + 0.005;
+    }
+}
+
+variableInterestRate(200000, 0.04, 30);
 
 
 
