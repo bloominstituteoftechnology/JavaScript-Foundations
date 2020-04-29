@@ -194,3 +194,27 @@ variableInterestRate(200000, 0.04, 30);
 
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+
+function askForInput() {
+    let name = prompt("Please enter you name.", "John");
+    let interest = prompt("Please enter your monthly interest rate as a decimal.", 0.05);
+    let principal = prompt("Please enter the principal of your loan.", 200000);
+    let years = prompt("Please enter the length of your loan in years.", 30);
+
+    
+ 
+
+    if (isNaN(interest) || isNaN(principal) || isNaN(years)) {
+      
+        return "Incorrect input. Please try again.";
+    }
+    else {
+        let monthlyRate = mortgageCalculator(principal, interest, years);
+        return name + ", your monthly rate is $" + Math.round(monthlyRate);
+    }
+    
+
+    
+}
+
+console.log(askForInput());
