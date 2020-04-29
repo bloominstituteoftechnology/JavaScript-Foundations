@@ -4,13 +4,13 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
-let principal = 200000;
+let P = 200000;
 
-let interestRate = 0.05;
+let IR = 0.05;
 
-let years = 30;
+let Y = 30;
 
-const name = clayton;
+const name = "Clayton";
 
 
 
@@ -21,12 +21,13 @@ Create a variable called `monthlyInterestRate` and give it the value of interest
 
 Create another variable called `periods` and give it the value of years*12.
 */
+let monthlyInterestRate = (IR / 12);
 
-
-
+let periods  = (Y*12);
 
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe to run calculations on your numbers. Save the final value into a variable called monthlyRate.
+
 
 Hint: while these calculations can be done in one line, it might be helpful to create a variable called "numerator" to calculate the numerator, and another called "denominator" to calculate the denominator 
 
@@ -35,7 +36,12 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
+let numerator = monthlyInterestRate * Math.pow(1+monthlyInterestRate,periods);
+let denominator = Math.pow(1+monthlyInterestRate,periods) -1;
 
+let monthlyRate = P * (numerator/denominator);
+
+console.log(monthlyRate);
 
 
 // 🏡 Task 3: Function
@@ -45,7 +51,30 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 */
 
 
+function mortgageCalculator(num1,num2,num3) {
+   
 
+    let P = 200000;
+    let IR = 0.05;
+    let Y = 30;
+    const name = "Clayton";
+    const phrase = " your monthly rate is ";
+    const period = ".";
+
+    num1 = P;
+    num2 = IR;
+    num3 = Y;
+
+    let monthlyInterestRate = (IR / 12);
+    let periods  = (Y*12);
+    let numerator = monthlyInterestRate * Math.pow(1+monthlyInterestRate,periods);
+    let denominator = Math.pow(1+monthlyInterestRate,periods) -1;
+    let monthlyRate = P * (numerator/denominator);
+
+    console.log(name + phrase + monthlyRate.toFixed(2) + period);
+}
+
+mortgageCalculator(3000000,0.06,40);
 
 
 // 🏡 Task 4: Arguments and Parameters
