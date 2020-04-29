@@ -178,6 +178,43 @@ function variableInterestRate(p, int, n) {
 
 variableInterestRate(200000, 0.04, 30);
 
+// I'm unclear if we need to do this but, combining previous two:
+function variableInterestRate(p, int, n, creditScore) {
+   
+    let periods = n*12;
+    let name = "Emily";
+
+    
+    let interest = int;
+
+    if (creditScore > 740) {
+        interest = interest - 0.005
+    }
+     if (creditScore < 660) {
+        interest = interest + 0.005;
+    }
+
+    let currentInterest = interest - 0.02;
+    
+    
+    for(j=0; j<9; j++) {
+
+        let monthlyInterestRate = currentInterest/12;
+
+        let numerator = monthlyInterestRate*Math.pow(1 + monthlyInterestRate,periods);
+        let denominator = Math.pow(1+monthlyInterestRate,periods) - 1;
+
+        let monthlyRate = p *(numerator/denominator);
+
+        console.log(name +", with an interest rate of " +Math.round(currentInterest*1000)/1000 + ", your monthly rate is $" + Math.round(monthlyRate));
+        
+
+        currentInterest = currentInterest + 0.005;
+    }
+}
+console.log("Combining variable interest rates with credit scores: ")
+variableInterestRate(200000, 0.04, 30, 650);
+
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
@@ -204,7 +241,7 @@ function askForInput() {
     
  
 
-    if (isNaN(interest) || isNaN(principal) || isNaN(years)) {
+    if (name===null || isNaN(interest) || isNaN(principal) || isNaN(years)) {
       
         return "Incorrect input. Please try again.";
     }
