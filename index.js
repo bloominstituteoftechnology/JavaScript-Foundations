@@ -29,8 +29,10 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
-monthlyInterestRate = principal [  ( 1 + interestRate )*periods ] / [ ( 1 + interestRate )^periods - 1 ]
-monthlyInterestRate()
+let numerator = monthlyInterestRate * Math.pow((1 + monthlyInterestRate), periods);
+let denominator = Math.pow((1 + monthlyInterestRate), periods) - 1;
+
+let monthlyRate = principle * (numerator/denominator);
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
@@ -39,8 +41,7 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 */
 
 function mortgageCalculator() 
-monthlyInterestRate = principal [  ( 1 + interestRate )*periods ] / [ ( 1 + interestRate )^periods - 1 ]
-monthlyInterestRate();
+ principal [  ( 1 + interestRate ) [math.pow (1+ interestRate, periods) ]/[ math.pow( 1 + interestRate, periods )- 1 ]
 
 
 
@@ -50,10 +51,10 @@ monthlyInterestRate();
 
 For example,
 mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
-*/
+*//
 
 
-function mortgageCalculator(200000, 0.05, 30);
+function mortgageCalculator(principal, interestRate, periods)
 
 
 // 🏡 Task 5: Conditionals
@@ -62,6 +63,15 @@ function mortgageCalculator(200000, 0.05, 30);
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
 
+let creditScore = math.random(0 - 800); 
+
+if (creditScore > 740)
+ return 
+else if (creditScore <= 660)
+ 
+ else creditScore > 660 
+ return 
+ 
 
 
 
@@ -81,7 +91,12 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-
+function variableInterestRate() {
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        
+    }
+}
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
