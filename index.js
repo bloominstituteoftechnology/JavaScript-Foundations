@@ -41,7 +41,7 @@ let denominator = Math.pow(1+monthlyInterestRate,periods) -1;
 
 let monthlyRate = P * (numerator/denominator);
 
-console.log(monthlyRate);
+// console.log(monthlyRate);
 
 
 // 🏡 Task 3: Function
@@ -50,31 +50,29 @@ console.log(monthlyRate);
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-
-function mortgageCalculator(num1,num2,num3) {
+//  function mortgageCalculator(P,IR,Y, CS) {
    
+ //   if(CS >740){
+   //     IR = IR - 0.005;
+  //  } else if (CS <660){
+  //      IR = IR + 0.005;
+  //  }
+   
+  //  const name = "Clayton";
+ //   const phrase = " your monthly rate is ";
+   // const period = ".";
 
-    let P = 200000;
-    let IR = 0.05;
-    let Y = 30;
-    const name = "Clayton";
-    const phrase = " your monthly rate is ";
-    const period = ".";
 
-    num1 = P;
-    num2 = IR;
-    num3 = Y;
+  //  let monthlyInterestRate = (IR / 12);
+  //  let periods  = (Y*12);
+   // let numerator = monthlyInterestRate * Math.pow(1+monthlyInterestRate,periods);
+ //   let denominator = Math.pow(1+monthlyInterestRate,periods) -1;
+  //  let monthlyRate = P * (numerator/denominator);
 
-    let monthlyInterestRate = (IR / 12);
-    let periods  = (Y*12);
-    let numerator = monthlyInterestRate * Math.pow(1+monthlyInterestRate,periods);
-    let denominator = Math.pow(1+monthlyInterestRate,periods) -1;
-    let monthlyRate = P * (numerator/denominator);
+  //  return (name + phrase + monthlyRate.toFixed(2) + period);
+//}
 
-    console.log(name + phrase + monthlyRate.toFixed(2) + period);
-}
-
-mortgageCalculator(3000000,0.06,40);
+// console.log(mortgageCalculator(200000,0.05,30,741));
 
 
 // 🏡 Task 4: Arguments and Parameters
@@ -113,8 +111,37 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
+ //const name = "Clayton";
+ const phrase = " with an interst rate of ";
+ const phrase2 = ", your monthly rate $"
+ const period = ".";
 
+ function variableInterestRate (P,IR,Y) {
+     
+     let adjust = (IR - 0.02);
 
+     while (adjust < (IR + 0.02)) {
+
+         
+         let monthlyInterestRate = (adjust / 12);
+         let periods  = (Y*12);
+         let numerator = monthlyInterestRate * Math.pow(1+monthlyInterestRate,periods);
+         let denominator = Math.pow(1+monthlyInterestRate,periods) -1;
+         let monthlyRate = P * (numerator/denominator);
+         
+         
+         
+         
+         
+         
+         console.log(name + phrase + adjust + phrase2 + monthlyRate.toFixed(0) + period);
+         
+         adjust + 0.005;
+
+    }
+}
+
+return(variableInterestRate(200000,0.04,30));
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
