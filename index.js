@@ -3,8 +3,11 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
+let principle=200000;
+let intrate=0.05;
+let years=30;
 
-
+let name= "Brittany";
 
 
 
@@ -13,8 +16,11 @@
 
 Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
 
-Create another variable called `periods` and give it the value of years*12.
-*/
+Create another variable called `periods` and give it the value of years*12*/
+
+let monthlyInterestRate= intrate/12;
+  let periods= years*12;
+
 
 
 
@@ -30,6 +36,11 @@ When your math is correct, monthlyRate will equal 1073.64
 */
 
 
+let newMr=monthlyInterestRate+1;
+
+let numerator=Math.pow(newMr,periods)*monthlyInterestRate;
+let denominator=Math.pow(newMr,periods)-1;
+let solution=principle*numerator/denominator;
 
 
 // 🏡 Task 3: Function
@@ -37,8 +48,26 @@ When your math is correct, monthlyRate will equal 1073.64
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
+function mortgageRatecalculater(principle,intrate,years){
+  //let principle=200000;
+ // let intrate=0.05;
+  //let years=30;
 
+  let name= "Brittany";
 
+  let monthlyInterestRate= intrate/12;
+  let periods= years*12;
+
+  let newMr=monthlyInterestRate+1;
+
+  let numerator=Math.pow(newMr,periods)*monthlyInterestRate;
+  let denominator=Math.pow(newMr,periods)-1;
+  let solution=principle*numerator/denominator;
+
+  return name +" ,your monthly rate is , "+ solution;
+}
+
+ console.log(mortgageRatecalculater(200000,0.05,30));
 
 
 
@@ -50,8 +79,26 @@ mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 */
 
 
+function mortgageRatecalculater(p,I,N){
+  //let principle=200000;
+ // let intrate=0.05;
+  //let years=30;
 
+  let name= "Brittany";
 
+  let monthlyInterestRate= intrate/12;
+  let periods= years*12;
+
+  let newMr=monthlyInterestRate+1;
+
+  let numerator=Math.pow(newMr,periods)*monthlyInterestRate;
+  let denominator=Math.pow(newMr,periods)-1;
+  let solution=principle*numerator/denominator;
+
+  return name +" ,your monthly rate is , "+ solution;
+}
+
+ console.log(mortgageRatecalculater(200000,0.05,30));
 
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
@@ -59,8 +106,40 @@ mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
 
-
-
+function mortgageRatecalculater(principle,intrate,years,creditscore){
+  let adjustedinterest=intrate;
+  
+    //let principle=200000;
+   // let intrate=0.05;
+    //let years=30;
+    
+  if (creditscore > 740){
+      adjustedinterest= adjustedinterest-0.005;
+    }
+    else if (creditscore < 600){
+       adjustedinterest =adjustedinterest+ 0.005;
+    }
+  
+  
+    let name= "Brittany";
+  
+    let monthlyInterestRate= adjustedinterest/12;
+    let periods= years*12;
+  
+    let newMr=monthlyInterestRate+1;
+  
+    let numerator=Math.pow(newMr,periods)*monthlyInterestRate;
+    let denominator=Math.pow(newMr,periods)-1;
+    let solution=principle*numerator/denominator;
+  
+  
+    return name +" ,your monthly rate is , "+ solution;
+  
+  
+  }
+  
+   console.log(mortgageRatecalculater(200000,0.04,30,700));
+  
 
 // 🏡 Task 6: Loops
 /* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
@@ -78,7 +157,10 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-
+function mortgageRatecalculater(principle,intrate,years,creditscore){
+  for(let i = 0; i < 10; i++); {
+    monthlyInterestRate = adjustedinterest + 0.02;
+  }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
