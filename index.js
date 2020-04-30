@@ -119,9 +119,9 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
  function variableInterestRate (P,IR,Y) {
      
      let adjust = (IR - 0.02);
-
-     while (adjust < (IR + 0.02)) {
-
+     
+     while (adjust <= (IR + 0.02)) {
+         
          
          let monthlyInterestRate = (adjust / 12);
          let periods  = (Y*12);
@@ -134,10 +134,9 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
          
          
          
-         console.log(name + phrase + adjust + phrase2 + monthlyRate.toFixed(0) + period);
-         
-         adjust + 0.005;
-
+         console.log(name + phrase + adjust.toFixed(3) + phrase2 + monthlyRate.toFixed(0) + period);
+        
+         adjust= adjust + 0.005;
     }
 }
 
