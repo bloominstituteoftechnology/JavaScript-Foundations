@@ -34,7 +34,7 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 //M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
-function monthlyRate(){ principal*(monthlyInterestRate* Math.pow((monthlyInterestRate+1), periods))/(Math.pow((1+monthlyInterestRate), periods))
+function monthlyRate(){ principal*(monthlyInterestRate* Math.pow((monthlyInterestRate+1), periods))/(Math.pow((1+monthlyInterestRate), periods)-1)
     return monthlyRate
     }
 
@@ -60,7 +60,9 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-
+function monthlyRate(p,i,n){
+    p*(i* Math.pow((i+1), n))/(Math.pow((1+i), periods)-1)
+}
 
 
 
