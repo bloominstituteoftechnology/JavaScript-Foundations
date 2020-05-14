@@ -75,34 +75,26 @@ console.log(`Task 4, ${mortgageCalculator2(200000, 0.05, 30)}`);
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
 const mortgageCalculator3 = function (P, I, N, credit) {
-    const principal = P;
-    const interestRate = I;
-    const years = N;
-    const monthlyInterestRate = (interestRate / 12);
-    const periods = years * 12;
-    const newRate = 0.05;
+    let NewinterestRate = I;
 
-
-    if (credit > 740 && credit < 800) {
-        const bestRate = (principal * ((monthlyInterestRate * (Math.pow(1 + monthlyInterestRate - newRate, periods)) / (Math.pow(1 + monthlyInterestRate - newRate, periods) - 1)))).toFixed(2);
-        return console.log(`${name}, based on your credt of ${credit}, your best monthly rate is $${bestRate}`);
-
-    } else if (credit < 660) {
-        const bestRate = (principal * ((monthlyInterestRate * (Math.pow(1 + newRate, periods)) / (Math.pow(1 + newRate, periods) - 1)))).toFixed(2);
-        return console.log(`${name}, based on your credt of ${credit}, your best monthly rate is $${bestRate}`); //1127.322
-
-    } else if (credit >= 660 && credit <= 740) {
-
-        const bestRate = (principal * ((monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods)) / (Math.pow(1 + monthlyInterestRate, periods) - 1)))).toFixed(2);
-        return console.log(`${name}, based on your credt of ${credit}, your best monthly rate is $${bestRate}`);
-
-    } else {
-        const bestRate = (principal * ((monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods)) / (Math.pow(1 + monthlyInterestRate, periods) - 1)))).toFixed(2);
-        return console.log(`${name}, based on your credt of ${credit}, your best monthly rate is $${bestRate}`);
+    if(credit>740){
+        NewinterestRate=NewinterestRate- 0.005;
     }
+    else if (credit<600){
+        NewinterestRate=NewinterestRate+0.005;
+
+    }
+
+    let monthlyInterestRate = NewinterestRate/12;
+     let periods = N * 12;
+    let numerator = monthlyInterestRate * Math.pow((1+ monthlyInterestRate), periods);
+    let denominator = Math.pow((1+ monthlyInterestRate), periods) - 1;
+    let monthlyRate = P * (numerator/denominator);
+
+    return `Cameron, your monthly rate is ${monthlyRate} with a credit score of ${credit}`;
 }
 
-console.log(`${mortgageCalculator3(200000, 0.05, 30,580)}`);
+console.log(`${mortgageCalculator3(200000, 0.05, 30,680)}`);
 
 
 // 🏡 Task 6: Loops
