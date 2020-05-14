@@ -120,18 +120,24 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
+
+let NewinterestRate = 0.02;
+
+
 for (let i = 0; i <= 10; i++) {
-   
+    let Rate = NewinterestRate += (0.005);
+
 
     const variableInterestRate = function (P, I, N) {
 
         const principal = P;
         const years = N;
-        const monthlyInterestRate = (interestRate / 12);
+        let monthlyInterestRate = (NewinterestRate / 12);
         const periods = years * 12;
 
+        // return P * I * (Math.pow(1 + (I), periods)) / (Math.pow(1 + I, periods) - 1);
         const bestRate = (principal * ((monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods)) / (Math.pow(1 + monthlyInterestRate, periods) - 1)))).toFixed(2);
-        return bestRate;
+        return Math.round(bestRate);
 
     }
     console.log(`${name}, with an interest rate of ${Rate.toFixed(3)}, your monthly rate is ${variableInterestRate(200000,.04,30)}`);
