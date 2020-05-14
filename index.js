@@ -3,8 +3,13 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
+let p= 200000 ;
 
+let i = 0.05;
 
+let y = 30;
+
+let name = 'Jason';
 
 
 
@@ -15,6 +20,10 @@ Create a variable called `monthlyInterestRate` and give it the value of interest
 
 Create another variable called `periods` and give it the value of years*12.
 */
+let monthlyInterestRate= (i / 12);
+
+
+let periods=(y*12);
 
 
 
@@ -27,8 +36,13 @@ Hint: while these calculations can be done in one line, it might be helpful to c
 Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
-*/
+*/ 
+let numerator = p*(monthlyInterestRate*Math.pow((1 + monthlyInterestRate), p));
 
+
+let denominator = (Math.pow((1 + monthlyInterestRate), p) -1);
+
+let monthlyRate = numerator/denominator
 
 
 
