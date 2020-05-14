@@ -77,19 +77,18 @@ Then, add control flow within your function such that IF creditScore is above 74
 const mortgageCalculator3 = function (P, I, N, credit) {
     let NewinterestRate = I;
 
-    if(credit>740){
-        NewinterestRate=NewinterestRate- 0.005;
-    }
-    else if (credit<600){
-        NewinterestRate=NewinterestRate+0.005;
+    if (credit > 740) {
+        NewinterestRate = NewinterestRate - 0.005;
+    } else if (credit < 600) {
+        NewinterestRate = NewinterestRate + 0.005;
 
     }
 
-    let monthlyInterestRate = NewinterestRate/12;
-     let periods = N * 12;
-    let numerator = monthlyInterestRate * Math.pow((1+ monthlyInterestRate), periods);
-    let denominator = Math.pow((1+ monthlyInterestRate), periods) - 1;
-    let monthlyRate = P * (numerator/denominator);
+    let monthlyInterestRate = NewinterestRate / 12;
+    let periods = N * 12;
+    let numerator = monthlyInterestRate * Math.pow((1 + monthlyInterestRate), periods);
+    let denominator = Math.pow((1 + monthlyInterestRate), periods) - 1;
+    let monthlyRate = P * (numerator / denominator);
 
     return `Cameron, your monthly rate is ${monthlyRate} with a credit score of ${credit}`;
 }
