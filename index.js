@@ -34,7 +34,7 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 //M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
-function monthlyRate(){ principal*(interestRate* Math.pow((interestRate+1), periods))/(Math.pow((1+interestRate), periods))
+function monthlyRate(){ principal*(monthlyInterestRate* Math.pow((monthlyInterestRate+1), periods))/(Math.pow((1+monthlyInterestRate), periods))
     return monthlyRate
     }
 
