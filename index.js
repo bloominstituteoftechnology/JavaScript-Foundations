@@ -55,7 +55,7 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 function mortgageCalculatorB(P, I, N) {
-    console.log(P * ((I * Math.pow(I + 1, N)) / (Math.pow(I + 1, N) - 1)));
+  console.log(P * ((I * Math.pow(I + 1, N)) / (Math.pow(I + 1, N) - 1)));
 }
 mortgageCalculatorB(200000, 0.05, 30);
 // console.log(mortgageCalculatorB);
@@ -64,22 +64,20 @@ mortgageCalculatorB(200000, 0.05, 30);
 
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
-let C = Math.floor(Math.random() * 801) //returns a random number between 0 and 800
+let C = Math.floor(Math.random() * 801); //returns a random number between 0 and 800
 console.log(C);
 const I = interestRate / 12;
-function mortgageCalculatorC(C,I) {
-    if (C > 740) {
-        return I -= 0.005;
-    }
-    else if (C < 660) {
-        return I += 0.005;
-    }
-    else {
-        return I;
-    }
+function mortgageCalculatorC(C, I) {
+  if (C > 740) {
+    return (I -= 0.005);
+  } else if (C < 660) {
+    return (I += 0.005);
+  } else {
+    return I;
+  }
 }
-mortgageCalculatorC(C,I);
-console.log(mortgageCalculatorC(C,I));
+mortgageCalculatorC(C, I);
+console.log(mortgageCalculatorC(C, I));
 // 🏡 Task 6: Loops
 /* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
 
@@ -95,7 +93,27 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
+function variableInterestRate(P, I, N) {
+  for (let I = 0.02; I <= 0.06; I = I + 0.005) {
+    //  console.log(N,i.toFixed(3));
+    const periods = N * 12;
 
+    let monthlyRate =
+      P *
+      (((I / 12) * Math.pow(1 + I / 12, periods)) /
+        (Math.pow(1 + I / 12, periods) - 1));
+
+    // return`${name}, with an interest rate of 0.02, your monthly rate is $`+monthlyRate;
+    console.log(
+      `${name}, with an interest rate of ` +
+        I.toFixed(3) +
+        `, your monthly rate is $` +
+        monthlyRate
+    );
+  }
+  return;
+}
+variableInterestRate(200000, 0.04, 30);
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
 /* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
