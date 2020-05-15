@@ -54,7 +54,11 @@ mortgageCalculator();
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
-
+function mortgageCalculatorB(P, I, N) {
+    console.log(P * ((I * Math.pow(I + 1, N)) / (Math.pow(I + 1, N) - 1)));
+}
+mortgageCalculatorB(200000, 0.05, 30);
+// console.log(mortgageCalculatorB);
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
 
