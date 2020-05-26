@@ -56,6 +56,10 @@ function mortgageCalculator() {
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
+function mortgageCalculator2(p, i, n) {
+    console.log(p * (i * Math.pow(i + 1 , n )/(Math.pow(i + 1, n) - 1)));
+  }
+  mortgageCalculator2(200000, 0.05, 30);
 
 
 
@@ -64,14 +68,30 @@ mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
 
-Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
+Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score 
+is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
 
+let creditScore =Math.floor(Math.random() * 801);
+const i = interestRate /12;
 
+function mortgageCalculator2(creditscore,i) {
+    if (creditscore > 740){
+        return i -= 0.05;
+    }
+    else if (creditScore <660){
+        return i += 0.005;
+    }
+    else {
+        return i;
+    }
+}
 
 
 // 🏡 Task 6: Loops
-/* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
+/* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log
+ the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. 
+ Complete these calculations using a for loop.
 
 For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
@@ -85,7 +105,25 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
-
+function variableInterestRate(p, i, n) {
+    for (let i = 0.02; i <= 0.06; i = i + 0.005) {
+       const periods = n * 12;
+  
+      let monthlyRate =
+        p *
+        (((i / 12) * Math.pow(1 + i / 12, periods)) /
+          (Math.pow(1 + i / 12, periods) - 1));
+  
+        console.log(
+        `${name}, with an interest rate of ` +
+          i.toFixed(3) +
+          `, your monthly rate is $` +
+          monthlyRate
+      );
+    }
+    return;
+  }
+  variableInterestRate(200000, 0.04, 30);
 
 
 
