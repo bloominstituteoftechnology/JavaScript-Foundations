@@ -32,7 +32,9 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
-
+const numerator = (monthlyInterestRate * Math.pow((monthlyInterestRate + 1),periods ));
+const denominator = (Math.pow((monthlyInterestRate + 1),periods) - 1);
+const  monthlyRate = principle * (numerator/denominator);
 
 
 
@@ -42,7 +44,9 @@ When your math is correct, monthlyRate will equal 1073.64
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-
+function mortgageCalculator(){
+    console.log('{name')
+}
 
 
 
