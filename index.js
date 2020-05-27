@@ -4,6 +4,7 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 let principal = 200000;
+
 let interestRate = 0.05;
 let years = 30;
 const name = "Shenandoah Veele";
@@ -109,16 +110,16 @@ function variableInterestRate(p, i, n) {
     for (let i = 0.02; i <= 0.06; i = i + 0.005) {
        const periods = n * 12;
   
-      let monthlyRate =
+       let monthlyRate =
         p *
         (((i / 12) * Math.pow(1 + i / 12, periods)) /
           (Math.pow(1 + i / 12, periods) - 1));
   
         console.log(
         `${name}, with an interest rate of ` +
-          i.toFixed(3) +
+          i.toFixed(2) +
           `, your monthly rate is $` +
-          monthlyRate
+          (monthlyRate.toFixed(2)) 
       );
     }
     return;
