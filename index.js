@@ -3,10 +3,10 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
-let principal = 200000
-let interestRate = 0.05
-let years = 30
-let name = "Tyler"
+let principal = 200000;
+let interestRate = 0.05;
+let years = 30;
+const name = "Tyler Taylor";
 
 
 
@@ -19,8 +19,9 @@ Create a variable called `monthlyInterestRate` and give it the value of interest
 Create another variable called `periods` and give it the value of years*12.
 */
 
-let monthlyInterestRate = interestRate / 12
-console.log(monthlyInterestRate)
+let monthlyInterestRate = interestRate / 12;
+let periods = years * 12;
+
 
 
 // 🏡 Task 2: Harder Math
@@ -33,7 +34,10 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
-
+const numerator = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, periods);
+const denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
+let monthlyRate = principal * numerator / denominator;
+console.log(monthlyRate);
 
 
 // 🏡 Task 3: Function
@@ -42,7 +46,18 @@ When your math is correct, monthlyRate will equal 1073.64
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-
+function mortgageCalculator(){
+    let principal = 200000;
+    let interestRate = 0.05;
+    let years = 30;
+    const name = "Tyler Taylor";
+    let monthlyInterestRate = interestRate / 12;
+    let periods = years * 12;
+    const numerator = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, periods);
+    const denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
+    let monthlyRate = principal * numerator / denominator;
+    console.log(name,"your monthly rate is $",monthlyRate);
+}
 
 
 
@@ -53,6 +68,18 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
+function mortgageCalculator(P,I,N){
+    let principal = P;
+    let interestRate = I;
+    let years = N;
+    const name = "Tyler Taylor";
+    let monthlyInterestRate = interestRate / 12;
+    let periods = years * 12;
+    const numerator = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, periods);
+    const denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
+    let monthlyRate = principal * numerator / denominator;
+    console.log(monthlyRate);
+}
 
 
 
