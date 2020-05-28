@@ -111,6 +111,7 @@ function creditCalculator(C,P,I,N){
 }
 
 
+
 // 🏡 Task 6: Loops
 /* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
 
@@ -146,6 +147,18 @@ function variableInterestRate(C,P,I,N){
         const denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
         monthlyRate = principal * numerator / denominator; 
         console.log(monthlyRate)
+
+    for(let i = 0; i < 10; i++){
+        interestRate = interestRate + .02;
+        let periods = years * 12;
+        let monthlyInterestRate = interestRate / 12;
+        const numerator = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, periods);
+        const denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
+        monthlyRate = principal * numerator / denominator; 
+        console.log(monthlyRate)
+        
+    }
+
 }
 
 
