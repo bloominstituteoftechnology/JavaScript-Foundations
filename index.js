@@ -149,7 +149,7 @@ function variableInterestRate(C,P,I,N){
         console.log(monthlyRate)
 
     for(let i = 0; i < 10; i++){
-        interestRate = interestRate + .02;
+        interestRate = interestRate + .002;
         let periods = years * 12;
         let monthlyInterestRate = interestRate / 12;
         const numerator = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, periods);
