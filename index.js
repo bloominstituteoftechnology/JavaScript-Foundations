@@ -90,7 +90,31 @@ function mortgageCalculator(P,I,N){
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
 
-
+function mortgageCalculator(C,P,I,N){
+    let creditScore = C;
+    let principal = P;
+    let interestRate = I;
+    let years = N;
+    if (creditScore <= 800 >= 740){
+        let interestRate = interestRate - 0.5
+    }else if (creditScore >= 600){
+        let interestRate = interestRate + 0.5
+    }else if(creditScore >= 600 <= 740){
+        let interestRate = interestRate
+    const numerator = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, periods);
+    const denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
+    let monthlyRate = principal * numerator / denominator;
+    console.log(monthlyRate);
+    }
+    
+    const name = "Tyler Taylor";
+    let monthlyInterestRate = interestRate / 12;
+    let periods = years * 12;
+    const numerator = monthlyInterestRate * Math.pow(1 + monthlyInterestRate, periods);
+    const denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
+    let monthlyRate = principal * numerator / denominator;
+    console.log(monthlyRate);
+}
 
 
 // 🏡 Task 6: Loops
