@@ -35,7 +35,7 @@ When your math is correct, monthlyRate will equal 1073.64
 
 const numerator = (monthlyInterestRate * Math.pow((monthlyInterestRate + 1),periods ));
 const denominator = (Math.pow((monthlyInterestRate + 1),periods) - 1);
-const  monthlyRate = principle * (numerator/denominator);
+const  monthlyRate = principal * (numerator/denominator);
 
 
 
@@ -94,7 +94,7 @@ function mortgageCalculator2(creditscore,i) {
  the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. 
  Complete these calculations using a for loop.
 
-For example, variableInterestRate(200000, 0.04, 30) should console.log:
+//For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
 "{Name}, with an interest rate of 0.02, your monthly rate is $739"
 "{Name}, with an interest rate of 0.025, your monthly rate is $790"
