@@ -28,19 +28,21 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
-const numerator = monthlyInterestRate*(Math.pow((1 + monthlyInterestRate),periods));
-const denominator = (Math.pow((1 + monthlyInterestRate),periods)) - 1;
-const monthlyRate = (principal*numerator/denominator).toFixed(2);
+
+
+
+
+
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
-function mortgageCalculator() {
-    console.log(`${myName}, your monthly rate is ${monthlyRate}`);
-  }
-  mortgageCalculator();
+
+
+
+
 
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
@@ -50,11 +52,20 @@ mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
 
+
+
+
+
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
 
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
+
+
+
+
+
 
 
 // 🏡 Task 6: Loops
@@ -72,6 +83,11 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
+
+
+
+
+
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
