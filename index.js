@@ -99,16 +99,9 @@ function variableInterestRate(p, i, n) {
        const periods = n * 12;
 
        let monthlyMortgageRate =
-        p *
-        (((i / 12) * Math.pow(1 + i / 12, periods)) /
-          (Math.pow(1 + i / 12, periods) - 1));
+        p * (((i / 12) * Math.pow(1 + i / 12, periods)) / (Math.pow(1 + i / 12, periods) - 1));
 
-        console.log(
-        `${myName}, with an interest rate of ` +
-          i.toFixed(2) +
-          `, your monthly rate is $` +
-          (monthlyMortgageRate.toFixed(0))
-      );
+        console.log(`${myName}, with an interest rate of ` + i.toFixed(2) + `, your monthly rate is $` + (monthlyMortgageRate.toFixed(0)));
     }
     return;
   }
