@@ -11,18 +11,25 @@
 // 🏡 Task 1.5: Simple Math
 /* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate. 
 
-Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
-
-Create another variable called `periods` and give it the value of years*12.
+(1) Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
+(2) Create another variable called `periods` and give it the value of years*12.
 */
 
 
 
 
 // 🏡 Task 2: Harder Math
-/* Create your calculator! Use the formula in the ReadMe to run calculations on your numbers. Save the final value into a variable called monthlyRate.
+/* Create your calculator! Use the formula in the ReadMe (also below) to run calculations on your numbers. Save the final value into a variable called monthlyRate. 
 
-Hint: while these calculations can be done in one line, it might be helpful to create a variable called "numerator" to calculate the numerator, and another called "denominator" to calculate the denominator 
+M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
+
+Hint: while these calculations can be done in one line, it might be helpful to create seperate variables to hold parts of your equation. That might look like this:
+
+(1) Create a variable called n1 and set it equal to  (1 + I )^N
+(2) Create a variable called n2 and set it equal to n1 * I
+(3) Create a variable called numerator and set it equal to n1 * n2 
+(4) Create a variable called denominator and set it equal to n1 - 1 
+(5) Create a variable called monthlyRate and set it equal to numerator/denominator
 
 Hint #2: you'll need to use the `math` object for parts of this calculation!
 
@@ -57,6 +64,8 @@ mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
 
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
+
+Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
 
 
