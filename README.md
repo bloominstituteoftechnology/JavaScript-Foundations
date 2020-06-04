@@ -55,6 +55,12 @@ Find the `index.js` file and complete the tasks as written. Your final product s
 
 As you work on your code you should make use of `console.log` to check your progress and debug.
 
+### Task 2b: Exit Ticket
+
+Once you begin, you will have 15 minutes to answer the questions [here](https://app.codesignal.com/public-test/pi7Q49mgrZbodiRzM/aXzit9h4ZRp3Si)
+
+The completion of these questions is mandatory for MVP. However, passing the quiz doesn't affect your standing as a Lambda School student whatsoever. This is Lambda School testing itself! Please answer honestly and to the best of your ability without using external references.
+
 ### Task 3: Stretch Goals
 
 After you have completed the requirements, try any of the following challenges. As always, note that these may require additional research beyond what you learned in this module.
