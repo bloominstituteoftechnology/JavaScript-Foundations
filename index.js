@@ -41,8 +41,7 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 let n1 = Math.pow((1+interest_rate), periods);
-let n2 = n1*interest_rate;
-let numerator = n1 * n2;
+let numerator = n1*monthlyInterestRate;
 let denominator = n1 -1;
 let monthlyRate = numerator/denominator
 
@@ -64,7 +63,7 @@ let monthlyInterestRate = interest_rate/12;
 let periods = years*12;
 let n1 = Math.pow((1+interest_rate), periods);
 let n2 = n1*interest_rate;
-let numerator = n1 * n2;
+let numerator = n1*monthlyInterestRate;
 let denominator = n1 -1;
 let monthlyRate = numerator/denominator
     return console.log(`${name} your monthly interest rate is ${monthlyRate}`);
@@ -81,14 +80,13 @@ mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 
 function mortgageCalculator(P, I, N){
     let principal = P;
-    let interest_rate = I;
     let name = "Ava";
     let years = N
-    let monthlyInterestRate = interest_rate/12;
+    let monthlyInterestRate = I;
     let periods = years*12;
     let n1 = Math.pow((1+interest_rate), periods);
     let n2 = n1*interest_rate;
-    let numerator = n1 * n2;
+    let numerator = n1*monthlyInterestRate;
     let denominator = n1 -1;
     let monthlyRate = numerator/denominator
         return console.log(monthlyRate);
@@ -104,14 +102,13 @@ Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by
 
 function mortgageCalculator(P, I, N, creditScore){
     let principal = P;
-    let interest_rate = I;
     let name = "Ava";
-    let monthlyInterestRate = interest_rate/12;
+    let monthlyInterestRate = I;
     let years = N;
     let periods = years*12;
     let n1 = Math.pow((1+interest_rate), periods);
     let n2 = n1*interest_rate;
-    let numerator = n1 * n2;
+    let numerator = n1*monthlyInterestRate;
     let denominator = n1 -1;
     let monthlyRate = numerator/denominator;
     
@@ -148,14 +145,13 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
 function variableInterestRate (P, I, N){   
     let principal = P;
-    let interest_rate = I;
     let name = "Ava";
-    let monthlyInterestRate = interest_rate/12;
+    let monthlyInterestRate = I;
     let years = N;
     let periods = years*12;
     let n1 = Math.pow((1+interest_rate), periods);
     let n2 = n1*interest_rate;
-    let numerator = n1 * n2;
+    let numerator = n1*monthlyInterestRate;
     let denominator = n1 -1;
     let monthlyRate = numerator/denominator;
     for(let i = I -0.02; i < I+0.02; i+= 0.005){
@@ -174,14 +170,13 @@ variableInterestRate(200000, 0.05, 30);
 in your function to calculate total monthly spending on housing */
 function monthlySpendingOnHousing(P, I, N, propertyTax, homeownersInsurance, hoaFees){
     let principal = P;
-    let interest_rate = I;
     let name = "Ava";
-    let monthlyInterestRate = interest_rate/12;
+    let monthlyInterestRate = I;
     let years = N;
     let periods = years*12;
     let n1 = Math.pow((1+interest_rate), periods);
     let n2 = n1*interest_rate;
-    let numerator = n1 * n2;
+    let numerator = n1*monthlyInterestRate;
     let denominator = n1 -1;
     let monthlyRate = numerator/denominator;
     let tax = propertyTax * P;
