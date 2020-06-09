@@ -25,11 +25,10 @@ M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
 
 Hint: while these calculations can be done in one line, it might be helpful to create seperate variables to hold parts of your equation. That might look like this:
 
-(1) Create a variable called n1 and set it equal to  (1 + I )^N
-(2) Create a variable called n2 and set it equal to n1 * I
-(3) Create a variable called numerator and set it equal to n1 * n2 
-(4) Create a variable called denominator and set it equal to n1 - 1 
-(5) Create a variable called monthlyRate and set it equal to numerator/denominator
+(1) Create a variable called n1 and set it equal to  (1 + monthlyInterestRate )^N
+(2) Create a variable called numerator and set it equal to p * n1 * monthlyInterestRate
+(3) Create a variable called denominator and set it equal to n1 - 1 
+(4) Create a variable called monthlyRate and set it equal to numerator/denominator
 
 Hint #2: you'll need to use the `math` object for parts of this calculation!
 
