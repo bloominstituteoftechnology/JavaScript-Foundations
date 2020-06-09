@@ -4,8 +4,13 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
+var principal = 200000;
 
+var interestRate = 0.05;
 
+var years = 30;
+
+let name = "Oleg";
 
 
 // 🏡 Task 1.5: Simple Math
@@ -14,6 +19,10 @@
 (1) Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
 (2) Create another variable called `periods` and give it the value of years*12.
 */
+
+
+var monthlyInterestRate = interestRate / 12;
+var periods = years * 12;
 
 
 
@@ -35,6 +44,13 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
+    var n1 = Math.pow((1 + monthlyInterestRate), periods);
+    var numerator = principal * n1 * monthlyInterestRate;
+    var denominator = n1 - 1;
+    var monthlyRate = (numerator / denominator).toFixed(2);
+console.log(monthlyRate)
+
+
 
 
 
@@ -43,9 +59,27 @@ When your math is correct, monthlyRate will equal 1073.64
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
+function mortgageCalculator(){
+    
+    var principal = 200000;
+var interestRate = 0.05;
+var years = 30;
+let name = "Oleg";
 
+var monthlyInterestRate = interestRate / 12;
+var periods = years * 12; 
 
+var n1 = Math.pow((1 + monthlyInterestRate), periods);
+    var numerator = principal * n1 * monthlyInterestRate;
+    var denominator = n1 - 1;
+    var monthlyRate = numerator / denominator;
 
+    var result = monthlyRate.toFixed(2);
+
+    return name + ", your montly rate is $" + result;
+
+}
+console.log(mortgageCalculator());
 
 
 // 🏡 Task 4: Arguments and Parameters
@@ -55,7 +89,25 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
+function Calculator(principal, interestRate, years){
+    
 
+
+
+var monthlyInterestRate = interestRate / 12;
+var periods = years * 12; 
+
+var n1 = Math.pow((1 + monthlyInterestRate), periods);
+    var numerator = principal * n1 * monthlyInterestRate;
+    var denominator = n1 - 1;
+    var monthlyRate = numerator / denominator;
+
+    var result = monthlyRate.toFixed(2);
+
+    return result;
+
+}
+console.log(Calculator(200000, 0.05, 30));
 
 
 
@@ -67,7 +119,29 @@ Then, add control flow within your function such that IF creditScore is above 74
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
 
+function Calculator(principal, interestRate, years, creditScore){
+    
+if (creditScore>740)
+    interestRate = interestRate * .995;
 
+if (creditScore<660)
+interestRate = interestRate * 1.005;
+
+
+    var monthlyInterestRate = interestRate / 12;
+    var periods = years * 12; 
+    
+    var n1 = Math.pow((1 + monthlyInterestRate), periods);
+        var numerator = principal * n1 * monthlyInterestRate;
+        var denominator = n1 - 1;
+        var monthlyRate = numerator / denominator;
+    
+        var result = monthlyRate.toFixed(2);
+    
+        return result;
+    
+    }
+    console.log(Calculator(200000, 0.05, 30, 550));
 
 
 // 🏡 Task 6: Loops
@@ -86,9 +160,29 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
+function variableInterestRate(principal, interestRate, years){
 
+    
+    for(let i=interestRate - 0.02; i < interestRate + 0.02; i=i+0.005)
+    {
 
-
+        var monthlyInterestRate = i / 12;
+      
+        var periods = years * 12; 
+        
+        var n1 = Math.pow((1 + monthlyInterestRate), periods);
+            var numerator = principal * n1 * monthlyInterestRate;
+            var denominator = n1 - 1;
+            var monthlyRate = numerator / denominator;
+        
+            var result = monthlyRate.toFixed(2);
+        
+            console.log(result);
+    }
+        
+ }
+      
+ variableInterestRate(200000, 0.04, 30);
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
 /* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
