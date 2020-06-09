@@ -170,10 +170,27 @@ variableInterestRate(200000, 0.05, 30);
 
 /* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
 
-/*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
+/*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters 
+in your function to calculate total monthly spending on housing */
+function monthlySpendingOnHousing(P, I, N, propertyTax, homeownersInsurance, hoaFees){
+    let principal = P;
+    let interest_rate = I;
+    let name = "Ava";
+    let monthlyInterestRate = interest_rate/12;
+    let years = N;
+    let periods = years*12;
+    let n1 = Math.pow((1+interest_rate), periods);
+    let n2 = n1*interest_rate;
+    let numerator = n1 * n2;
+    let denominator = n1 -1;
+    let monthlyRate = numerator/denominator;
+    let tax = propertyTax * P;
+return (console.log(monthlyRate + tax + homeownersInsurance + hoaFees))
 
+}
 
-/* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
+/* 🏡 Build a calculator function that accepts `monthly payment` and 
+`interest rate` and returns the maximum loan that a person could afford */
 
 
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
