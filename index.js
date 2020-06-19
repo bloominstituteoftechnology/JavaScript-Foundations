@@ -40,9 +40,12 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
-let n1 = (1 + monthlyInterestRate)^periods;
-let numerator =n1 * interest *  principal ;
-let denominator = n1 - 1;
+
+let nn = (1+monthlyInterestRate);
+let n1 = (nn)^periods;
+//let p =interest*n1;
+let numerator = ((principal * n1) *( monthlyInterestRate)) ;
+let denominator = (n1 - 1);
 let monthlyRate = numerator/denominator;
 console.log(monthlyRate);
 
@@ -52,11 +55,23 @@ console.log(monthlyRate);
 
 
 // 🏡 Task 3: Function
-/* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
+/* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, 
+your monthly rate is ${monthlyRate}"
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
+let userinput = 'Snap Williams';
+var theClient = ''; 
+
+const whatIsYourName = (urname) => {
+    console.log("what is your name?");
+    
+    
+    return urname;
+};
+
+theClient = whatIsYourName(userinput);
 
 
 
@@ -68,10 +83,10 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-
-
-
-
+const mortgageCalculator = (p,i,n) => {
+    return p * i * n;
+};
+console.log(mortgageCalculator(principal,interest,n1));
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
 
