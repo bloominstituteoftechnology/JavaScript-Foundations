@@ -8,7 +8,7 @@
 let principal = 200000
 let intRate = 0.05
 let years = 30
-const name = 'Alice Frazier'
+const name = 'Alice'
 
 console.log(name)
 
@@ -47,13 +47,15 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
-const n1 = 1 + monthlyInterestRate ^ intRate;
+
+
+const n1 = (1 + monthlyInterestRate) ^ intRate;
 console.log(n1);
 
 const numerator = principal * n1 * monthlyInterestRate;
 console.log(numerator)
 
-const denominator = n1 -1;
+const denominator = n1 - 1;
 console.log(denominator)
 
 const monthlyRate = numerator/denominator;
@@ -66,8 +68,11 @@ console.log(monthlyRate)
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
+function mortgageCalculator(){
+    return {name} + ", your monthly rate is" + {monthlyRate};
+}
 
-
+mortgageCalculator
 
 
 // 🏡 Task 4: Arguments and Parameters
