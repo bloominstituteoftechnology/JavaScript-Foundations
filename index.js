@@ -62,11 +62,11 @@ console.log(monthlyRate);
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-function mortgageCalculator(){
-    console.log(`${name}, your monthly rate is ${monthlyRate}`);
-}
+// function mortgageCalculator(){
+//     console.log(`${name}, your monthly rate is ${monthlyRate}`);
+// }
 
-mortgageCalculator();
+// mortgageCalculator();
 
 
 // 🏡 Task 4: Arguments and Parameters
@@ -76,14 +76,21 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-
-
+function mortgageCalculator (P, I, N) {
+    let periods = N * 12;
+    let name = "Alice";
+    let monthlyRate = P * I /12 *(Math.pow(1 + I/12, periods))/(Math.pow(1+ I/12, periods)-1);
+    console.log(`${name}, your monthly rate is `+ `${monthlyRate}`);
+    return;
+  }
+  mortgageCalculator(200000, 0.05, 30);
 
 
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
 
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
+
 
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
