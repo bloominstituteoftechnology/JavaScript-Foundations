@@ -129,6 +129,18 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
+function variableInterestRate (P, I, N) {
+  let periods = N * 12;
+  let name = "Alice";
+  let monthlyRate = P * I /12 *(Math.pow(1 + I/12, periods))/(Math.pow(1+ I/12, periods)-1);
+  console.log(`${name}, your monthly rate is `+ `${monthlyRate}`);
+
+  for (let i = 0; i <= 10; i+0.005) { 
+    return
+  }
+}
+variableInterestRate(200000, 0.03, 30);
+
 
 
 
