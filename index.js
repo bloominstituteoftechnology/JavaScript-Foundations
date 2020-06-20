@@ -18,8 +18,8 @@ let years = 30;
 (1) Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
 (2) Create another variable called `periods` and give it the value of years*12.
 */
-let monthlyInterestRate = interest / 12;
-let periods = years*12;
+let monthlyInterestRate = (interest) / 12;
+let periods = (years)*12;
 
 
 // 🏡 Task 2: Harder Math
@@ -44,7 +44,7 @@ When your math is correct, monthlyRate will equal 1073.64
 let nn = (1+monthlyInterestRate);
 let n1 = (nn)^periods;
 //let p =interest*n1;
-let numerator = ((principal * n1) *( monthlyInterestRate)) ;
+let numerator = ((principal * n1) *( interest)) ;
 let denominator = (n1 - 1);
 let monthlyRate = numerator/denominator;
 console.log(monthlyRate);
@@ -71,35 +71,66 @@ const whatIsYourName = (urname) => {
     return urname;
 };
 
-theClient = whatIsYourName(userinput);
 
 
 
 
 // 🏡 Task 4: Arguments and Parameters
-/* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
+/* Substitute the variables in your functions for parameters such that you can substitute 
+`P`, `I`, and `N` when you call the function.
 
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-const mortgageCalculator = (p,i,n) => {
-    return p * i * n;
-};
-console.log(mortgageCalculator(principal,interest,n1));
+const mortgageCalculator = (p,i,n,c) => {
+  
 // 🏡 Task 5: Conditionals
-/* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
+/* Add another paramter to your function called credit score. This parameter will be a 
+number between 0 and 800 (a credit score).
 
-Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
+Then, add control flow within your function such that IF creditScore is above 740, interest rate 
+drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is 
+anywhere between 660 and 740 interest rate doesn't change.
 
-Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
+Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, 
+to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
 
 
 
 
+
+if(c > 740){
+let decrase = interest * -(monthlyRate * 0.95) ;
+i = interest - decrase;
+
+}
+let e = p * i * n;
+
+
+
+    return e;
+};
+
+
+theClient = whatIsYourName(userinput);
+
+
+
+console.log(mortgageCalculator(principal,interest,n1,800));
+
+console.log(theClient+", your monthly rate is "+monthlyRate);
+
+
+
+
+
+
 // 🏡 Task 6: Loops
-/* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
+/* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, 
+except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or 
+minus 2% from the inputted interest rate. Complete these calculations using a for loop.
 
 For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
@@ -114,20 +145,29 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
+function variableInterestRate(){
+
+}
+
+
 
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
-/* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
+/* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may 
+require additional research beyond what you learned today */
 
-/*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
+/*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate 
+total monthly spending on housing */
 
 
-/* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
+/* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan 
+that a person could afford */
 
 
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
 
 
-/* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+/* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy 
+    and paste as to not lose your work!) */
