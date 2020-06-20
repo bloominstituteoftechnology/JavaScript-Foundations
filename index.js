@@ -73,7 +73,7 @@ to increase an interest rate by 5% you'd do monthlyRate * 1.05.
 
 
 let principal = 0;
-let interest = 0.00;
+let interest = 0;
 let years = 0;
 let monthlyInterestRate = 0;
 let periods =0;
@@ -84,35 +84,12 @@ let denominator = 0;
 let monthlyRate = 0;
 
 
- nn = (1+monthlyInterestRate);
-n1 = (nn)^periods;
-//let p =interest*n1;
- numerator = ((principal * n1) *( interest)) ;
-denominator = (n1 - 1);
-monthlyRate = numerator/denominator;
-
-
-
-years = 30;
-interest = 0.05 ;
- principal =  200000;
-
-
- monthlyInterestRate = (interest) / 12;
- periods = (years)*12;
 
 
 
 
 
-console.log(monthlyRate);
-
-
-
-
-
-
-let userinput = 'Snap Williams';
+let userinput = '';
 var theClient = ''; 
 
 const whatIsYourName = (urname) => {
@@ -121,45 +98,67 @@ const whatIsYourName = (urname) => {
     
     return urname;
 };
-// Recieve user input
-function myJsFunction(){
-    var text=document.getElementById('input1').value;
-    document.write(text);
- }
-
-
-
-
 
 
 
 const mortgageCalculator = (p,i,n,c) => {
   
 
+    years = 30;
+    interest = 0.05 ;
+     principal =  200000;
+    
+    
+     monthlyInterestRate = (interest) / 12;
+     periods = (years)*12;
+    
+    
+    
+    
+     nn = (1+monthlyInterestRate);
+    n1 = (nn)^periods;
+    //let p =interest*n1;
+     numerator = ((principal * n1) *( interest)) ;
+    denominator = (n1 - 1);
+    monthlyRate = numerator/denominator;
+    
+    
+    
+    
+    console.log(monthlyRate);
+    
 
 
 
-if(c > 740){
-let decrase = interest * -(monthlyRate * 0.95) ;
-i = interest - decrase;
+    if(c > 740){
+    let decrase = interest * -(monthlyRate * 0.95) ;
+    i = interest - decrase;
+    
+    }
+    let e = p * i * n;
+    
+    
+    
+        return e;
+    };
+    
 
-}
-let e = p * i * n;
+// Recieve user input
+function myJsFunction(){
+    var text=document.getElementById('input1').value;
+     userinput = text;
+     theClient = whatIsYourName(userinput);
+    document.write(theClient+", your monthly rate is "+monthlyRate);
+ }
 
 
 
-    return e;
-};
 
 
-theClient = whatIsYourName(userinput);
-
-
-
-console.log(mortgageCalculator(principal,interest,n1,800));
+document.write(mortgageCalculator(principal,interest,n1,800));
 
 console.log(theClient+", your monthly rate is "+monthlyRate);
-document.write(theClient+", your monthly rate is "+monthlyRate);
+
 
 
 
