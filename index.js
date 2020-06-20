@@ -63,10 +63,10 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 */
 
 function mortgageCalculator(){
-    return {name} + ", your monthly rate is" + {monthlyRate};
+    console.log(`${name}, your monthly rate is ${monthlyRate}`);
 }
 
-mortgageCalculator
+mortgageCalculator();
 
 
 // 🏡 Task 4: Arguments and Parameters
