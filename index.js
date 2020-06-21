@@ -112,7 +112,7 @@ let loanTerm = 0;
 let interestRate = 0;
 let credit = 400;
 let yourMonthlyPayments = 0;
-
+let  added=0;
 
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a 
@@ -155,22 +155,39 @@ function theMortgageCalculator(principal,interestRate,loanTerm,credit) {
 
                 */
                 if(credit >= 0 && credit <= 659){
-                  
+                    /*
+                    // The increase is what number over 5%
+                    var numerator = 5 * interestRate;
+                    var increaser = 5 / 100;
+                    interestRate = interestRate + (interestRate * increaser);
+                  */
                     var percentageRate = interestRate / 1200;
                     var lengthOfLoan = 12 * loanTerm;
                     var monthlyPayment = (principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
                     monthlyPayment = monthlyPayment.toFixed(2);
                     yourMonthlyPayments = monthlyPayment;
-                    var msg = theClient+' Your Monthly Mortgage Payment is '+monthlyPayment;
-                    //document.getElement("p").value = msg;
-        
-                    // Write to a new page
-                    //document.write(msg);
-                    // or write to the current form
+                    // to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
+                    yourMonthlyPayments = yourMonthlyPayments * 1.05;
+                    var msg = theClient+' Your Monthly Mortgage Payment is '+yourMonthlyPayments;
+                   
         
                     document.getElementById("clientName").value = msg;
-                    document.getElementById("payment").value = monthlyPayment;
-                    document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator';
+                    document.getElementById("payment").value = yourMonthlyPayments;
+                   added = 0;
+                    if(!NaN === true){
+                        added = 0;
+                        added = yourMonthlyPayments - monthlyPayment;
+                        document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                    }else if(!NaN === false){
+                        
+                        document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                    }else if (NaN === false){
+                        
+                        document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                    }
+                        else if(NaN === true){
+                        document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                    }
                 }
 
 
