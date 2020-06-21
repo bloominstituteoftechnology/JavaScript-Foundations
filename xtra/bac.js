@@ -141,82 +141,28 @@ function theMortgageCalculator(principal,interestRate,loanTerm,credit) {
         document.getElementById("formerror").innerHTML = "";
 
 
+/*
+        below 660 interest rate increases by 5%
+        between 660 740 remains unchanged
+        above 740 interest rate drops by 5%
+        */
 
+        var percentageRate = interestRate / 1200;
+    var lengthOfLoan = 12 * loanTerm;
+    var monthlyPayment = (principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
+    monthlyPayment = monthlyPayment.toFixed(2);
+    yourMonthlyPayments = monthlyPayment;
+    var msg = theClient+' Your Monthly Mortgage Payment is '+monthlyPayment;
+    //document.getElement("p").value = msg;
 
+    // Write to a new page
+    //document.write(msg);
+    // or write to the current form
 
-
-        /*
-                below 660 interest rate increases by 5%
-                between 660 740 remains unchanged
-                above 740 interest rate drops by 5%
-            An additional 5% of the interest is added
-                      5   =   N
-                    100     5
-
-                */
-                if(credit >= 0 && credit <= 659){
-                  
-                    var percentageRate = interestRate / 1200;
-                    var lengthOfLoan = 12 * loanTerm;
-                    var monthlyPayment = (principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
-                    monthlyPayment = monthlyPayment.toFixed(2);
-                    yourMonthlyPayments = monthlyPayment;
-                    var msg = theClient+' Your Monthly Mortgage Payment is '+monthlyPayment;
-                    //document.getElement("p").value = msg;
-        
-                    // Write to a new page
-                    //document.write(msg);
-                    // or write to the current form
-        
-                    document.getElementById("clientName").value = msg;
-                    document.getElementById("payment").value = monthlyPayment;
-                    document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator';
-                }
-
-
-
-               // Unchanged 660 740
-               if(credit >=660 && credit <= 740){
-                var percentageRate = interestRate / 1200;
-                var lengthOfLoan = 12 * loanTerm;
-                var monthlyPayment = (principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
-                monthlyPayment = monthlyPayment.toFixed(2);
-                yourMonthlyPayments = monthlyPayment;
-                var msg = theClient+' Your Monthly Mortgage Payment is '+monthlyPayment;
-                //document.getElement("p").value = msg;
-    
-                // Write to a new page
-                //document.write(msg);
-                // or write to the current form
-    
-                document.getElementById("clientName").value = msg;
-                document.getElementById("payment").value = monthlyPayment;
-                document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator';
-               }
-
-               // Unchanged 660 740
-               if(credit >=741 && credit <= 800){
-                var percentageRate = interestRate / 1200;
-                var lengthOfLoan = 12 * loanTerm;
-                var monthlyPayment = (principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
-                monthlyPayment = monthlyPayment.toFixed(2);
-                yourMonthlyPayments = monthlyPayment;
-                var msg = theClient+' Your Monthly Mortgage Payment is '+monthlyPayment;
-                //document.getElement("p").value = msg;
-    
-                // Write to a new page
-                //document.write(msg);
-                // or write to the current form
-    
-                document.getElementById("clientName").value = msg;
-                document.getElementById("payment").value = monthlyPayment;
-                document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator';
-               }
-        
-
-
-
-} else if(credit > 800){
+    document.getElementById("clientName").value = msg;
+    document.getElementById("payment").value = monthlyPayment;
+    document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator';
+    } else if(credit > 800){
         document.getElementById("formerror").innerHTML = "No Credit Score given";
         //location.reload();   
     }
