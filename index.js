@@ -470,6 +470,7 @@ function variableInterestRateCalculator(principal,interestRate,loanTerm,credit){
 
 
 const getVarInput = () => {
+    let using = document.getElementById("using").innerHTML;
     if(isvar == null){
         isvar = true;
 
@@ -479,10 +480,33 @@ const getVarInput = () => {
     if(isvar){
         let style = document.getElementById("clientName");
     style.style.height = "16rem";
+    
+    using.style.value = "Using Variable Interest Rate Calculator";
     variableInterestRateCalculator(principal,interestRate,loanTerm,credit);
     }else if(!isvar){
         let style = document.getElementById("clientName");
     style.style.height = "5rem";
+  
+    using.value = "Using Regular Mortgage Calculator";
+    
+    
+    getUserInput();
+ }
+
+ if( document.querySelector('.varInt').checked){
+    let style = document.getElementById("clientName");
+    style.style.height = "16rem";
+    
+    using.style.value = "Using Variable Interest Rate Calculator";
+    variableInterestRateCalculator(principal,interestRate,loanTerm,credit);
+    
+ }else{
+    let style = document.getElementById("clientName");
+    style.style.height = "5rem";
+  
+    using.value = "Using Regular Mortgage Calculator";
+    
+    
     getUserInput();
  }
 };
