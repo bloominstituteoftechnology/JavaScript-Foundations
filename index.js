@@ -470,7 +470,8 @@ function variableInterestRateCalculator(principal,interestRate,loanTerm,credit){
 
 const getVarInput = () => {
 
-    
+    let style = document.getElementById("clientName");
+    style.style.height = "16rem";
     variableInterestRateCalculator(principal,interestRate,loanTerm,credit);
 };
 

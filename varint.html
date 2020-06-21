@@ -15,7 +15,7 @@
     
     textarea#clientName{
         width: 20rem;
-        height:4rem;
+        height:18rem;
     }
     div{
       display:flex;
@@ -47,11 +47,11 @@
   <table>
     <tr>
         <select id="selectbox" name="" onchange="javascript:location.href = this.value;">
-            <option value="index.html" selected>Regular Calculator</option>
-            <option value="varint.html" selected>varInt</option>
+            <option onclick = "getUserInput()" value="index.html" selected>Regular Calculator</option>
+            <option onclick = "getVarInput()" value="varint.html" selected>varInt</option>
           </select>
       <td class = "labels">Regular Calculator Rates Option</td>
-      <td class = "textbox"><input type = "checkbox" class="varInt" id = "varInt"  value="varint" onclick = "getUserInput()"></td>
+      <td class = "textbox"><input type = "checkbox" class="index" id = "index"  value="index" onclick = "getUserInput()"></td>
     </tr>
     <tr>
         <td class = "labels">What is your name?</td>
