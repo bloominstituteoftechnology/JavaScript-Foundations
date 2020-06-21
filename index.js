@@ -469,6 +469,8 @@ function variableInterestRateCalculator(principal,interestRate,loanTerm,credit){
 
 
 const getVarInput = () => {
+
+    
     variableInterestRateCalculator(principal,interestRate,loanTerm,credit);
 };
 
