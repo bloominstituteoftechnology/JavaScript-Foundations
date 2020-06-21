@@ -105,9 +105,6 @@ function mortgageCalculator() {
 
 
 
-
-
-
 // 🏡 Task 6: Loops
 /* Write a new function called variableInterestRate. This function should be the
 
