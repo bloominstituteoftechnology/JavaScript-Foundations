@@ -113,6 +113,7 @@ let interestRate = 0;
 let credit = 400;
 let yourMonthlyPayments = 0;
 let  added=0;
+let decreased = 0;
 
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a 
@@ -187,6 +188,9 @@ function theMortgageCalculator(principal,interestRate,loanTerm,credit) {
                     }
                         else if(NaN === true){
                         document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                    }else{
+                       
+                        document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
                     }
                 }
 
@@ -218,16 +222,42 @@ function theMortgageCalculator(principal,interestRate,loanTerm,credit) {
                 var monthlyPayment = (principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
                 monthlyPayment = monthlyPayment.toFixed(2);
                 yourMonthlyPayments = monthlyPayment;
-                var msg = theClient+' Your Monthly Mortgage Payment is '+monthlyPayment;
+                //decreased = monthlyPayment;
+                
+                //To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95.
+                yourMonthlyPayments = yourMonthlyPayments * 0.95;
+
+                var msg = theClient+' Your Monthly Mortgage Payment is '+yourMonthlyPayments;
                 //document.getElement("p").value = msg;
     
                 // Write to a new page
                 //document.write(msg);
                 // or write to the current form
+
+                added = 0;
+                if(!NaN === true){
+                    decreased = 0;
+                    decreased = yourMonthlyPayments - monthlyPayment;
+                    document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
+                }else if(!NaN === false){
+                    
+                    document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                }else if (NaN === false){
+                    
+                    document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                }
+                    else if(NaN === true){
+                    document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                }else{
+                   
+                    document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                }
+
+
     
                 document.getElementById("clientName").value = msg;
-                document.getElementById("payment").value = monthlyPayment;
-                document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator';
+                document.getElementById("payment").value = yourMonthlyPayments;
+                document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator your payment decreased '+decreased;
                }
         
 
