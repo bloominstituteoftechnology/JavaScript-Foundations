@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,30 +12,45 @@
       width:5rem;
      
     }
-    div{
-      display: flex;
-      flex-direction: column;
-     
-    }
-    div.con{
-      margin-left:40%;
-      width:70%;
-      height: 50%;
+    
+    textarea#clientName{
+        width: 20rem;
+        height:4rem;
     }
   </style>
-  
+  <script src="index.js"></script>
   
   </head>
   <body>
-    <div class='con'>
-      <p>Open up the console to check your work!</p>
-    
 
-    <input type="text" id="input1" />
-<button onclick="myJsFunction()">submit</button>
-<script src="index.js"></script>
-    </div>
 
-    
-  </body>
-</html>
+<h1>The Mortgage Calculator of the Future</h1>
+<p>This mortgage calculator will total up all your monthy payments based off the apr percentage rate, amount barrowed from us, and the amount of years the payments will be made</p>
+<form>
+  <table>
+    <tr>
+        <td class = "labels">What is your name?</td>
+        <td class = "textbox"><input type = "text" id = "input1" ></td>
+      </tr>
+    <tr>
+      <td class = "labels">The Principal Loan Amount Barrowed</td>
+      <td class = "textbox"><input type = "number" id = "principal" onclick = "calculatePayment()"></td>
+    </tr>
+    <tr>
+      <td class = "labels">Years of Payment</td>
+      <td class = "textbox"><input type = "number" id = "loanTerm" onclick = "calculatePayment()"></td>
+    </tr>
+    <tr>
+      <td class = "labels">The Interest Rate</td>
+      <td class = "textbox"><input type = "number" id = "interestRate" onclick = "calculatePayment()"></td>
+    </tr>
+    <tr>
+      <td class = "labels"><textarea type = "text" id = "clientName"></textarea></td>
+      <td class = "textbox"><input type = "number" id = "payment" name = "monthlyPayment"></td>
+    </tr>
+    <tr>
+      <td class = "button"><button onclick = "calculateThePayment()">Calculate</button></td>
+      <td class = "button"><input type = "reset" name = "Reset"></td>
+    </tr>
+  </table>
+</form>
