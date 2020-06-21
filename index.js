@@ -114,7 +114,7 @@ let credit = 400;
 let yourMonthlyPayments = 0;
 let  added=0;
 let decreased = 0;
-
+var varint = '';
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a 
 number between 0 and 800 (a credit score).
@@ -270,20 +270,38 @@ function theMortgageCalculator(principal,interestRate,loanTerm,credit) {
 
 }
 
-
-function getUserInput(){
-
+const reg = () => {
     var yourName = document.getElementById("input1").value;
     theClient = yourName;
      principal = parseFloat(document.getElementById("principal").value);
-
      loanTerm = parseFloat(document.getElementById("loanTerm").value);
      credit = parseInt(document.getElementById("creditScore").value);
     interestRate = parseFloat(document.getElementById("interestRate").value);
     console.log(interestRate);
 
     theMortgageCalculator(principal,interestRate,loanTerm,credit);
+};
+const varinterest = () => {
+  var l =  document.querySelector('.varInt:checked').value;
+
+if  (typeof l != null ){
+    //l = document.getElementById('varInt').value;
+    console.log('here'+l);
+}else {
+    l = 'of';
 }
+   console.log('l'+l);
+    return l;
+};
+const init = () => {
+varint = varinterest();
+    console.log(v);
+};
+const getUserInput = () =>{
+  reg();
+//init();
+    
+};
 
 
 
@@ -310,7 +328,7 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-function variableInterestRate(principal,interestRate,loanTerm,credit){
+function variableInterestRateCalculator(principal,interestRate,loanTerm,credit){
 
     if(credit <= 800){
         // TODO: Credit banner
@@ -444,10 +462,15 @@ function variableInterestRate(principal,interestRate,loanTerm,credit){
     }
 
 
-}
 
 
 
+};
+
+
+const getVarInput = () => {
+    variableInterestRateCalculator(principal,interestRate,loanTerm,credit);
+};
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
