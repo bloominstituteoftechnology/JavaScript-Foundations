@@ -76,7 +76,7 @@ to increase an interest rate by 5% you'd do monthlyRate * 1.05.
 
 // function functioning correctly
 
-function calculateThePayment() {
+function mortgageCalculator() {
 
     var yourName = document.getElementById("input1").value;
     theClient = yourName;
@@ -96,6 +96,7 @@ function calculateThePayment() {
     // Write to a new page
     //document.write(msg);
     // or write to the current form
+
     document.getElementById("clientName").value = msg;
     document.getElementById("payment").value = monthlyPayment;
 
@@ -139,19 +140,24 @@ function variableInterestRate(){
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
-/* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may 
+/* Attempt any of the stretch goals below once you have finished the work above. 
+Remember as always, these may 
 require additional research beyond what you learned today */
 
-/*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate 
+/*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters
+ in your function to calculate 
 total monthly spending on housing */
 
 
-/* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan 
+/* 🏡 Build a calculator function that accepts `monthly payment` and 
+`interest rate` and returns the maximum loan 
 that a person could afford */
 
 
-/* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
+/* 🏡 Explore using `window.prompt()` to allow a user to input parameters in 
+the browser */
 
 
-/* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy 
+/* 🏡  Refactor your `variableInterestRate()` function to accept an array of 
+interest rates (make sure to copy 
     and paste as to not lose your work!) */
