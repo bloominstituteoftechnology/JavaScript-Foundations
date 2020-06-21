@@ -115,6 +115,7 @@ let yourMonthlyPayments = 0;
 let  added=0;
 let decreased = 0;
 var varint = '';
+var isvar = null;
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a 
 number between 0 and 800 (a credit score).
@@ -469,10 +470,21 @@ function variableInterestRateCalculator(principal,interestRate,loanTerm,credit){
 
 
 const getVarInput = () => {
+    if(isvar == null){
+        isvar = true;
 
-    let style = document.getElementById("clientName");
+    }else {
+        isvar = false;
+    }
+    if(isvar){
+        let style = document.getElementById("clientName");
     style.style.height = "16rem";
     variableInterestRateCalculator(principal,interestRate,loanTerm,credit);
+    }else if(!isvar){
+        let style = document.getElementById("clientName");
+    style.style.height = "5rem";
+    getUserInput();
+ }
 };
 
 
