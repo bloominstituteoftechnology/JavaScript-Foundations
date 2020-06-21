@@ -42,7 +42,8 @@
 
 <h1>The Mortgage Calculator of the Future</h1>
 <p>This mortgage calculator will total up all your monthy payments based off the apr percentage rate, amount barrowed from us, and the amount of years the payments will be made</p>
-<form>
+<p class = 'error' id='formerror'></p>
+<form >
   <table>
     <tr>
         <td class = "labels">What is your name?</td>
@@ -55,6 +56,10 @@
     <tr>
       <td class = "labels">Years of Payment</td>
       <td class = "textbox"><input type = "number" id = "loanTerm" onclick = "getUserInput()"></td>
+    </tr>
+    <tr>
+      <td class = "labels">Credit Score</td>
+      <td class = "textbox"><input type = "number" id = "creditScore" onclick = "getUserInput()"></td>
     </tr>
     <tr>
       <td class = "labels">The Interest Rate</td>

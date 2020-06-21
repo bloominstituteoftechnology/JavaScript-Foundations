@@ -110,17 +110,36 @@ let theClient = '';
 let principal = 0;
 let loanTerm = 0;
 let interestRate = 0;
-let credit = 0;
+let credit = 400;
+let yourMonthlyPayments = 0;
+
+
+// 🏡 Task 5: Conditionals
+/* Add another paramter to your function called credit score. This parameter will be a 
+number between 0 and 800 (a credit score).
+
+Then, add control flow within your function such that IF creditScore is above 740, interest rate 
+drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is 
+anywhere between 660 and 740 interest rate doesn't change.
+
+Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, 
+to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
+*/
 
 
 function theMortgageCalculator(principal,interestRate,loanTerm,credit) {
 
     
 
-    var percentageRate = interestRate / 1200;
+    if(credit <= 800){
+        // TODO: Credit banner
+        document.getElementById("formerror").innerHTML = "";
+
+        var percentageRate = interestRate / 1200;
     var lengthOfLoan = 12 * loanTerm;
     var monthlyPayment = (principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
     monthlyPayment = monthlyPayment.toFixed(2);
+    yourMonthlyPayments = monthlyPayment;
     var msg = theClient+' Your Monthly Mortgage Payment is '+monthlyPayment;
     //document.getElement("p").value = msg;
 
@@ -131,6 +150,10 @@ function theMortgageCalculator(principal,interestRate,loanTerm,credit) {
     document.getElementById("clientName").value = msg;
     document.getElementById("payment").value = monthlyPayment;
     document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator';
+    } else if(credit > 800){
+        document.getElementById("formerror").innerHTML = "No Credit Score given";
+        //location.reload();   
+    }
 
 }
 
@@ -142,7 +165,7 @@ function getUserInput(){
      principal = parseFloat(document.getElementById("principal").value);
 
      loanTerm = parseFloat(document.getElementById("loanTerm").value);
-
+     credit = parseInt(document.getElementById("creditScore").value);
     interestRate = parseFloat(document.getElementById("interestRate").value);
     theMortgageCalculator(principal,interestRate,loanTerm,credit);
 }
