@@ -310,7 +310,139 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-function variableInterestRate(){
+function variableInterestRate(principal,interestRate,loanTerm,credit){
+
+    if(credit <= 800){
+        // TODO: Credit banner
+        document.getElementById("formerror").innerHTML = "";
+
+
+
+
+
+
+        /*
+                below 660 interest rate increases by 5%
+                between 660 740 remains unchanged
+                above 740 interest rate drops by 5%
+            An additional 5% of the interest is added
+                      5   =   N
+                    100     5
+
+                */
+                if(credit >= 0 && credit <= 659){
+                    /*
+                    // The increase is what number over 5%
+                    var numerator = 5 * interestRate;
+                    var increaser = 5 / 100;
+                    interestRate = interestRate + (interestRate * increaser);
+                  */
+                    var percentageRate = interestRate / 1200;
+                    var lengthOfLoan = 12 * loanTerm;
+                    var monthlyPayment = (principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
+                    monthlyPayment = monthlyPayment.toFixed(2);
+                    yourMonthlyPayments = monthlyPayment;
+                    // to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
+                    yourMonthlyPayments = yourMonthlyPayments * 1.05;
+                    var msg = theClient+' Your Monthly Mortgage Payment is '+yourMonthlyPayments;
+                   
+        
+                    document.getElementById("clientName").value = msg;
+                    document.getElementById("payment").value = yourMonthlyPayments;
+                   added = 0;
+                    if(!NaN === true){
+                        added = 0;
+                        added = yourMonthlyPayments - monthlyPayment;
+                        document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                    }else if(!NaN === false){
+                        
+                        document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                    }else if (NaN === false){
+                        
+                        document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                    }
+                        else if(NaN === true){
+                        document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                    }else{
+                       
+                        document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                    }
+                }
+
+
+
+               // Unchanged 660 740
+               if(credit >=660 && credit <= 740){
+                var percentageRate = interestRate / 1200;
+                var lengthOfLoan = 12 * loanTerm;
+                var monthlyPayment = (principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
+                monthlyPayment = monthlyPayment.toFixed(2);
+                yourMonthlyPayments = monthlyPayment;
+                var msg = theClient+' Your Monthly Mortgage Payment is '+monthlyPayment;
+                //document.getElement("p").value = msg;
+    
+                // Write to a new page
+                //document.write(msg);
+                // or write to the current form
+    
+                document.getElementById("clientName").value = msg;
+                document.getElementById("payment").value = monthlyPayment;
+                document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator';
+               }
+
+               // Unchanged 660 740
+               if(credit >=741 && credit <= 800){
+                var percentageRate = interestRate / 1200;
+                var lengthOfLoan = 12 * loanTerm;
+                var monthlyPayment = (principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
+                monthlyPayment = monthlyPayment.toFixed(2);
+                yourMonthlyPayments = monthlyPayment;
+                //decreased = monthlyPayment;
+                
+                //To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95.
+                yourMonthlyPayments = yourMonthlyPayments * 0.95;
+
+                var msg = theClient+' Your Monthly Mortgage Payment is '+yourMonthlyPayments;
+                //document.getElement("p").value = msg;
+    
+                // Write to a new page
+                //document.write(msg);
+                // or write to the current form
+
+                added = 0;
+                if(!NaN === true){
+                    decreased = 0;
+                    decreased = yourMonthlyPayments - monthlyPayment;
+                    document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
+                }else if(!NaN === false){
+                    
+                    document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                }else if (NaN === false){
+                    
+                    document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                }
+                    else if(NaN === true){
+                    document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                }else{
+                   
+                    document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                }
+
+
+    
+                document.getElementById("clientName").value = msg;
+                document.getElementById("payment").value = yourMonthlyPayments;
+                document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator your payment decreased '+decreased;
+               }
+        
+
+
+
+} else if(credit > 800){
+        document.getElementById("formerror").innerHTML = "No Credit Score given";
+        //location.reload();   
+    }
+
 
 }
 
