@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Foundations</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    button{
+      height: 6rem;
+      width:5rem;
+     
+    }
+    
+    textarea#clientName{
+        width: 20rem;
+        height:4rem;
+    }
+    div{
+      display:flex;
+      flex-direction: column;
+      align-content:center;
+      flex-wrap: wrap;
+    }
+    p{
+      width: 30%;
+      height: 100%;
+    }
+    div.can{
+    border:1px solid black;
+      width:100%;
+      height: 100%;
+    }
+  </style>
+  <script src="index.js"></script>
+  
+  </head>
+  <body>
+
+<div class='can'>
+
+<h1>The Mortgage Calculator of the Future</h1>
+<p>This mortgage calculator will total up all your monthy payments based off the apr percentage rate, amount barrowed from us, and the amount of years the payments will be made</p>
+<p class = 'error' id='formerror'></p>
+<form >
+  <table>
+    <tr>
+      <select id="selectbox" name="" onchange="javascript:location.href = this.value;">
+        <option onclick = "getUserInput()" value="index.html" >Regular Calculator</option>
+        <option onclick = "getVarInput()" value="varint.html" >varInt</option>
+      </select>
+
+
+      <td class = "labels">Variable Interest Rates 10X!! Option</td>
+      <td class = "textbox"><input type = "checkbox" class="varInt" id = "varInt"  onclick = "getVarInput()"></td>
+    </tr>
+    <tr>
+        <td class = "labels">What is your name?</td>
+        <td class = "textbox"><input type = "text" id = "input1" onclick = "getUserInput()"></td>
+      </tr>
+    <tr>
+      <td class = "labels">The Principal Loan Amount Barrowed</td>
+      <td class = "textbox"><input type = "number" id = "principal" onclick = "getUserInput()"></td>
+    </tr>
+    <tr>
+      <td class = "labels">Years of Payment</td>
+      <td class = "textbox"><input type = "number" id = "loanTerm" onclick = "getUserInput()"></td>
+    </tr>
+    <tr>
+      <td class = "labels">Credit Score</td>
+      <td class = "textbox"><input type = "number" id = "creditScore" onclick = "getUserInput()"></td>
+    </tr>
+    <tr>
+      <td class = "labels">The Interest Rate</td>
+      <td class = "textbox"><input type = "number" id = "interestRate" onclick = "getUserInput()"></td>
+    </tr>
+    <tr>
+      <td class = "labels">You're using</td>
+      <p id ="using" class = "textbox"></p>
+    </tr>
+    <tr>
+      <td class = "labels"><textarea type = "text" id = "clientName"></textarea></td>
+      <td class = "textbox"><input type = "number" id = "payment" name = "monthlyPayment"></td>
+    </tr>
+    <tr>
+      <td class = "button"><button onclick = "getUserInput()">Calculate Monthly Payments</button></td>
+      <td class = "button"><input type = "reset" name = "Reset"></td>
+    </tr>
+  </table>
+</form>
+<div><p id='thanks'></p></div>
+
+</div>
+
+
+</body>
+</html>
