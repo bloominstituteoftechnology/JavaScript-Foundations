@@ -76,6 +76,9 @@ to increase an interest rate by 5% you'd do monthlyRate * 1.05.
 
 // function functioning correctly
 
+
+
+
 function mortgageCalculator() {
 
     var yourName = document.getElementById("input1").value;
@@ -102,6 +105,48 @@ function mortgageCalculator() {
 
 
 }
+
+let theClient = '';
+let principal = 0;
+let loanTerm = 0;
+let interestRate = 0;
+let credit = 0;
+
+
+function theMortgageCalculator(principal,interestRate,loanTerm,credit) {
+
+    
+
+    var percentageRate = interestRate / 1200;
+    var lengthOfLoan = 12 * loanTerm;
+    var monthlyPayment = (principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
+    monthlyPayment = monthlyPayment.toFixed(2);
+    var msg = theClient+' Your Monthly Mortgage Payment is '+monthlyPayment;
+    //document.getElement("p").value = msg;
+
+    // Write to a new page
+    //document.write(msg);
+    // or write to the current form
+
+    document.getElementById("clientName").value = msg;
+    document.getElementById("payment").value = monthlyPayment;
+    document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator';
+
+}
+
+
+function getUserInput(){
+
+    var yourName = document.getElementById("input1").value;
+    theClient = yourName;
+     principal = parseFloat(document.getElementById("principal").value);
+
+     loanTerm = parseFloat(document.getElementById("loanTerm").value);
+
+    interestRate = parseFloat(document.getElementById("interestRate").value);
+    theMortgageCalculator(principal,interestRate,loanTerm,credit);
+}
+
 
 
 
