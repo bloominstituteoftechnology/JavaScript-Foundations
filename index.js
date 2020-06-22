@@ -3,8 +3,9 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
-let principal = 200000;
-let interestRate = 0.05;
+let M;
+let P = 200000;
+let I = 0.05;
 let years = 30;
 const name = "Angie";
 
@@ -18,7 +19,7 @@ const name = "Angie";
 (1) Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
 (2) Create another variable called `periods` and give it the value of years*12.
 */
-let monthlyInterestRate = interestRate / 12;
+let monthlyInterestRate = I / 12;
 let periods = years * 12;
 
 
@@ -26,7 +27,7 @@ let periods = years * 12;
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe (also below) to run calculations on your numbers. Save the final value into a variable called monthlyRate. 
 
-M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
+(M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
 
 Hint: while these calculations can be done in one line, it might be helpful to create seperate variables to hold parts of your equation. That might look like this:
 
@@ -40,6 +41,12 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
+M = monthlyRate(P, monthlyInterestRate, periods);
+
+function monthlyRate (P, monthlyInterestRate, periods) {
+    return P * monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods)) / (Math.pow(1 + monthlyInterestRate, periods) - 1);
+};
+console.log(M);
 
 
 
@@ -49,7 +56,7 @@ When your math is correct, monthlyRate will equal 1073.64
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-
+function mortgageCalculator
 
 
 
