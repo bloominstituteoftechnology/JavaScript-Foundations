@@ -244,7 +244,7 @@ const theMortgageCalculator = (principal,interestRate,loanTerm,credit) => {
 
                             //added = 0;
 
-                            // TODO: Is not getting the difference into decreased. 
+                            
                             decreased = 0;
 
                             if(NaN === false){
@@ -397,23 +397,26 @@ const getPayment = (principal,interestRate,loanTerm,credit) => {
                     document.getElementById("clientName").value = msg;
                     document.getElementById("payment").value = yourMonthlyPayments;
                    added = 0;
-                    if(added != NaN){
-                        added = 0;
-                        added = yourMonthlyPayments - monthlyPayment;
-                        document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
-                    }else if(!NaN === false){
-                        
-                        document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
-                    }else if (NaN === false){
-                        
-                        document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
-                    }
-                        else if(NaN === true){
-                        document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
-                    }else{
-                       
-                        document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
-                    }
+                   if(NaN === false){
+                    added = 0;
+                    added = yourMonthlyPayments - monthlyPayment;
+                    document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                }else if(NaN != false){
+                    added = 0;
+                    added = yourMonthlyPayments - monthlyPayment;
+                    document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                
+                }else if(NaN != true){
+                    added = 0;
+                    added = yourMonthlyPayments - monthlyPayment;
+                    document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                }else{
+                    added = 0;
+                    added = yourMonthlyPayments - monthlyPayment;
+                    document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                
+                }
+
                 }
 
 
@@ -456,24 +459,27 @@ const getPayment = (principal,interestRate,loanTerm,credit) => {
                 //document.write(msg);
                 // or write to the current form
 
-                added = 0;
-                if(!NaN === true){
-                    decreased = 0;
-                    decreased = yourMonthlyPayments - monthlyPayment;
-                    document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
-                }else if(!NaN === false){
-                    
-                    document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
-                }else if (NaN === false){
-                    
-                    document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
-                }
-                    else if(NaN === true){
-                    document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
-                }else{
-                   
-                    document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
-                }
+                decreased = 0;
+
+                            if(NaN === false){
+                                decreased += monthlyPayment -  yourMonthlyPayments ;
+                                document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
+                            
+                            }else if(NaN != false){
+                                decreased += monthlyPayment -  yourMonthlyPayments ;
+                                document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
+                            
+                            
+                            }else if(NaN != true){
+                                decreased += monthlyPayment -  yourMonthlyPayments ;
+                                document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
+                            
+                            }else{
+                                decreased += monthlyPayment -  yourMonthlyPayments ;
+                                document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
+                            
+                            
+                            }
 
 
     
@@ -508,7 +514,7 @@ function variableInterestRateCalculator(){
     }
   
 
-console.log(varAr[3]);
+console.log('varar'+varAr[3]);
 
 
 
@@ -577,7 +583,9 @@ const getVarInput = () => {
 };
 // On the button rack
 const getVinput = () => {
-getVarInput();
+    //getVarInput();
+    variableInterestRateCalculator();
+
 };
 
 
