@@ -6,8 +6,8 @@
 /*let M;
 let P = 200000;
 let I = 0.05;
-let years = 30;
-const name = "Angie";*/
+let years = 30;*/
+const name = "Angie";
 
 
 
@@ -83,7 +83,7 @@ Then, add control flow within your function such that IF creditScore is above 74
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
 
-function mortgageCalculator(P, I, years, creditScore) {
+/*function mortgageCalculator(P, I, years, creditScore) {
     
     let monthlyRate = P * I / 12 * (Math.pow(1 + I / 12, years * 12)) / (Math.pow(1 + I / 12, years * 12) - 1);
     
@@ -99,7 +99,7 @@ mortgageCalculator(200000, 0.05, 30, 740);
 mortgageCalculator(200000, 0.05, 30, 660);
 mortgageCalculator(200000, 0.05, 30, 425);
 mortgageCalculator(200000, 0.05, 30, 689);
-mortgageCalculator(200000, 0.05, 30, 800);
+mortgageCalculator(200000, 0.05, 30, 800);*/
 
 
 
@@ -119,7 +119,17 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-
+function variableInterestRate (P, I, years) {
+    
+    for (let I = .02; I <= .06; I+=.005) {
+        
+        let monthlyRate = P * I / 12 * (Math.pow(1 + I / 12, years * 12)) / (Math.pow(1 + I / 12, years * 12) - 1);
+    
+        console.log(name + " ,with an interest rate of " + I.toFixed(3) + " ,your montly rate is $" + Math.round(monthlyRate + I));
+       
+    }
+}
+variableInterestRate(200000, 0.04, 30);
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
