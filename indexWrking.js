@@ -505,10 +505,8 @@ function variableInterestRateCalculator(principal,interestRate,loanTerm,credit){
 
 };
 
-
-const getVarInput = () => {
-    let using = document.getElementById("using").innerHTML;
-    if(isvar == null){
+/* was there before
+ if(isvar == null){
         isvar = true;
 
     }else {
@@ -530,22 +528,47 @@ const getVarInput = () => {
     getUserInput();
  }
 
+*/
+const getVarInput = () => {
+    let using = document.getElementById("using").innerHTML;
+   
+// Checked button will only execute 1 full time now that I added these function changes
  if( document.querySelector('.varInt').checked){
     let style = document.getElementById("clientName");
     style.style.height = "16rem";
-    
+    // Change the functions for other inputs
+    document.getElementById('varInt').onclick = getVinput();
+    document.getElementById('input1').onclick = getVarInput();
+    document.getElementById('principal').onclick = getVarInput();
+    document.getElementById('loanTerm').onclick = getVarInput();
+    document.getElementById('creditScore').onclick = getVarInput();
+    document.getElementById('interestRate').onclick = getVarInput();
+    document.getElementById('calcIt').onclick = getVarInput();
+    // TODO: WOn't Show msg
     using.style.value = "Using Variable Interest Rate Calculator";
     variableInterestRateCalculator(principal,interestRate,loanTerm,credit);
     
  }else{
     let style = document.getElementById("clientName");
     style.style.height = "5rem";
-  
+    // Change the buttons back to what they where
+    // Change the functions for other inputs
+    document.getElementById('varInt').onclick = getVinput();
+    document.getElementById('input1').onclick = getUserInput();
+    document.getElementById('principal').onclick = getUserInput();
+    document.getElementById('loanTerm').onclick = getUserInput();
+    document.getElementById('creditScore').onclick = getUserInput();
+    document.getElementById('interestRate').onclick = getUserInput();
+    document.getElementById('calcIt').onclick = getUserInput();
     using.value = "Using Regular Mortgage Calculator";
     
     
     getUserInput();
  }
+};
+
+const getVinput = () => {
+getVarInput();
 };
 
 

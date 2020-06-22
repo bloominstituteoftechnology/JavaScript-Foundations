@@ -48,12 +48,12 @@
     <tr>
       <select id="selectbox" name="" onchange="javascript:location.href = this.value;">
         <option onclick = "getUserInput()" value="index.html" >Regular Calculator</option>
-        <option onclick = "getVarInput()" value="varint.html" >varInt</option>
+        <option onclick = "getVinput()" value="varint.html" >varInt</option>
       </select>
 
 
       <td class = "labels">Vaariable Interest Rates 10X!! Option</td>
-      <td class = "textbox"><input type = "checkbox" class="varInt" id = "varInt"  onclick = "getVarInput()"></td>
+      <td class = "textbox"><input type = "checkbox" class="varInt" id = "varInt"  onclick = "getVinput()"></td>
     </tr>
     <tr>
         <td class = "labels">What is your name?</td>
@@ -84,7 +84,7 @@
       <td class = "textbox"><input type = "number" id = "payment" name = "monthlyPayment"></td>
     </tr>
     <tr>
-      <td class = "button"><button onclick = "getUserInput()">Calculate Monthly Payments</button></td>
+      <td class = "button"><button id="calcIt" onclick = "getUserInput()">Calculate Monthly Payments</button></td>
       <td class = "button"><input type = "reset" name = "Reset"></td>
     </tr>
   </table>
