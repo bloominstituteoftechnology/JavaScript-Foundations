@@ -56,8 +56,10 @@ console.log(M);
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-function mortgageCalculator
-
+function mortgageCalculator () {
+    console.log(name + " , your monthtly rate is " + M);
+}
+mortgageCalculator();
 
 
 // 🏡 Task 4: Arguments and Parameters
