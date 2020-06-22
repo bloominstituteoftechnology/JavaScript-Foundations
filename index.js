@@ -108,16 +108,20 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
+
+
+
+// Had to Comment out  Task 6 for my Stretch to Funcion.
+ 
 function variableInterestRate(p, i, n) {
     let Pow = Math.pow(1+i/12,n*12);
     let M = p*(Pow*(i/12))/(Pow-1);
     return (M.toFixed(2));
-    
- };
-
+};
+ 
 for (i=.02;i<=.06;i+=.005) {
-        console.log(name,"with an interest rate of",i.toFixed(3),"your monthly variable rate is $", variableInterestRate(200000,i,30));
-    };
+    console.log(name,"with an interest rate of",i.toFixed(3),"your monthly variable rate is $", variableInterestRate(200000,i,30));
+ }; 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
@@ -130,6 +134,18 @@ for (i=.02;i<=.06;i+=.005) {
 
 
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
-
-
+/*
+var input;
+input = window.prompt('Enter starting interest rate, <= "1"', '0.00');
+console.log('input: ', input);
+i = input;
+function variableInterestRate(p, i, n) {
+    for (i = i ; i <=1; i=i+.005){
+    let Pow = Math.pow(1+i/12,n*12)
+    let m = p*(Pow*(i/12))/(Pow-1)
+    console.log(name, "with and interest rate of ",input,", your monthly interest rate is ",m.toFixed(2))
+    }
+}
+variableInterestRate(200000, input, 30) 
+*/
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
