@@ -512,9 +512,13 @@ function variableInterestRateCalculator(){
         interestRate = interestRate - 0.5;
         console.log('int'+interestRate);
     }
-  
+  // TODO Make interest rate the interest rate
+for(let n = 0; n < varAr.length; n++){
+    
+    console.log('monthly payment with interest of '+interestRate + ' is '+varAr[n]);
+    interestRate = interestRate - 0.5;
+}
 
-console.log('varar'+varAr[3]);
 
 
 
