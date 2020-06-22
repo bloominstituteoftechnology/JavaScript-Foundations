@@ -55,14 +55,20 @@ morgageCalculator();
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
-// M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ] */
+// M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ] 
+   
 let p = amt ;
 let i = apr ;
+let n = n1
+function mortgageCalculator(p, i, n) {
+    let Pow = Math.pow(1+i/12,n*12)
+    let M = p*(Pow*(i/12))/(Pow-1);
+    return (M.toFixed(2))
+}
+console.log(name,"Your monthly rate is",mortgageCalculator(200000, 0.05, 30));
 
-function morgageCalculator2(p,i,n1) {console.log(name,"Your monthly rate is", p * i * (Math.pow(1 + i, n1)) / (Math.pow(1 + i, n1) - 1));}
-
-
-morgageCalculator2(200000, 0.05, 30); 
+// function morgageCalculator2(p,i,n1) {console.log(name,"Your monthly rate is", p * i * (Math.pow(1 + i, n1)) / (Math.pow(1 + i, n1) - 1));}
+// morgageCalculator2(200000, 0.05, 30); 
 
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
