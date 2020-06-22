@@ -115,8 +115,8 @@ function variableInterestRate(p, i, n) {
     
  };
 
-for (i=.02;i<=.06;i+=.005) {  
-        console.log(name,"with an interest rate of",i,"your monthly variable rate is $", variableInterestRate(200000,i,30));
+for (i=.02;i<=.06;i+=.005) {
+        console.log(name,"with an interest rate of",i.toFixed(3),"your monthly variable rate is $", variableInterestRate(200000,i,30));
     };
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
