@@ -323,6 +323,7 @@ const init = () => {
 varint = varinterest();
     console.log(v);
 };
+// on the button rack
 const getUserInput = () =>{
 
     //var l =  document.querySelector('.varInt:checked').value;
@@ -490,16 +491,24 @@ const getPayment = (principal,interestRate,loanTerm,credit) => {
     }
 };
 
-function variableInterestRateCalculator(principal,interestRate,loanTerm,credit){
+function variableInterestRateCalculator(){
+    var yourName = document.getElementById("input1").value;
+    theClient = yourName;
+     principal = parseFloat(document.getElementById("principal").value);
+     loanTerm = parseFloat(document.getElementById("loanTerm").value);
+     credit = parseInt(document.getElementById("creditScore").value);
+    interestRate = parseFloat(document.getElementById("interestRate").value);
 // Make 10 different payments at each interestrate show into an array posted in textbox
     for(let n = 0; n < 10; n++){
         
         getPayment(principal,interestRate,loanTerm,credit);
+        varAr[n] = yourMonthlyPayments;
         interestRate = interestRate - 0.5;
+        console.log('int'+interestRate);
     }
   
 
-
+console.log(varAr[3]);
 
 
 
@@ -546,7 +555,7 @@ const getVarInput = () => {
     document.getElementById('calcIt').onclick = getVarInput();
     // TODO: WOn't Show msg
     using.style.value = "Using Variable Interest Rate Calculator";
-    variableInterestRateCalculator(principal,interestRate,loanTerm,credit);
+    variableInterestRateCalculator();
     
  }else{
     let style = document.getElementById("clientName");
@@ -566,7 +575,7 @@ const getVarInput = () => {
     getUserInput();
  }
 };
-
+// On the button rack
 const getVinput = () => {
 getVarInput();
 };
