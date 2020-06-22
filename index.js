@@ -65,7 +65,7 @@ function mortgageCalculator(p, i, n) {
     let M = p*(Pow*(i/12))/(Pow-1);
     return (M.toFixed(2))
 }
-console.log(name,"Your monthly rate is",mortgageCalculator(200000, 0.05, 30));
+console.log(name,"Your monthly calculator rate is",mortgageCalculator(200000, 0.05, 30));
 
 // function morgageCalculator2(p,i,n1) {console.log(name,"Your monthly rate is", p * i * (Math.pow(1 + i, n1)) / (Math.pow(1 + i, n1) - 1));}
 // morgageCalculator2(200000, 0.05, 30); 
@@ -80,15 +80,15 @@ Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by
 var creditScore = 600;
 if (creditScore > 740) {
     var monthlyRate = Math.round(numerator / denominator) * 0.95;
-    console.log (name, "your monthly rate is $", monthlyRate);
+    console.log (name, "your monthly credit rate is $", monthlyRate);
 }
 else if (creditScore < 660) {
     var monthlyRate = Math.round(numerator / denominator) * 1.05;
-    console.log (name, "your monthly rate is $", monthlyRate);
+    console.log (name, "your monthly credit rate is $", monthlyRate);
 }
 else if (creditScore > 660 && creditScore < 740) {
     var monthlyRate = Math.round(numerator / denominator);
-    console.log (name, "your monthly rate is $", monthlyRate);
+    console.log (name, "your monthly credit rate is $", monthlyRate);
 }
 
 
@@ -108,9 +108,16 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
+function variableInterestRate(p, i, n) {
+    let Pow = Math.pow(1+i/12,n*12);
+    let M = p*(Pow*(i/12))/(Pow-1);
+    return (M.toFixed(2));
+    
+ };
 
-
-
+for (i=.02;i<=.06;i+=.005) {  
+        console.log(name,"with an interest rate of",i,"your monthly variable rate is $", variableInterestRate(200000,i,30));
+    };
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
