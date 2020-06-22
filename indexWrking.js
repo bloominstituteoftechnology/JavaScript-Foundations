@@ -181,25 +181,25 @@ function theMortgageCalculator(principal,interestRate,loanTerm,credit) {
 
                    
                    
-                    if(NaN === false){
-                        added = 0;
-                        added = yourMonthlyPayments - monthlyPayment;
-                        document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
-                    }else if(NaN != false){
-                        added = 0;
-                        added = yourMonthlyPayments - monthlyPayment;
-                        document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
-                    
-                    }else if(NaN != true){
-                        added = 0;
-                        added = yourMonthlyPayments - monthlyPayment;
-                        document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
-                    }else{
-                        added = 0;
-                        added = yourMonthlyPayments - monthlyPayment;
-                        document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
-                    
-                    }
+                        if(NaN === false){
+                            added = 0;
+                            added = yourMonthlyPayments - monthlyPayment;
+                            document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                        }else if(NaN != false){
+                            added = 0;
+                            added = yourMonthlyPayments - monthlyPayment;
+                            document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                        
+                        }else if(NaN != true){
+                            added = 0;
+                            added = yourMonthlyPayments - monthlyPayment;
+                            document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                        }else{
+                            added = 0;
+                            added = yourMonthlyPayments - monthlyPayment;
+                            document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                        
+                        }
                 }
 
 
@@ -223,47 +223,68 @@ function theMortgageCalculator(principal,interestRate,loanTerm,credit) {
                 document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator';
                }
 
-               // Unchanged 660 740
-               if(credit >= 741 && credit <= 800){
-                var percentageRate = interestRate / 1200;
-                var lengthOfLoan = 12 * loanTerm;
-                var monthlyPayment = (principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
-                monthlyPayment = monthlyPayment.toFixed(2);
-                yourMonthlyPayments = monthlyPayment;
-                //decreased = monthlyPayment;
+                        // High End Extension Of upper credit limits
+                        if(credit >= 741 && credit <= 800){
+                            var percentageRate = interestRate / 1200;
+                            var lengthOfLoan = 12 * loanTerm;
+                            var monthlyPayment = (principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
+                            monthlyPayment = monthlyPayment.toFixed(2);
+                            yourMonthlyPayments = monthlyPayment;
+                            //decreased = monthlyPayment;
+                            
+                            //To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95.
+                            yourMonthlyPayments = yourMonthlyPayments * 0.95;
+
+                            var msg = theClient+' Your Monthly Mortgage Payment is '+yourMonthlyPayments;
+                            //document.getElement("p").value = msg;
                 
-                //To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95.
-                yourMonthlyPayments = yourMonthlyPayments * 0.95;
+                            // Write to a new page
+                            //document.write(msg);
+                            // or write to the current form
 
-                var msg = theClient+' Your Monthly Mortgage Payment is '+yourMonthlyPayments;
-                //document.getElement("p").value = msg;
-    
-                // Write to a new page
-                //document.write(msg);
-                // or write to the current form
+                            //added = 0;
 
-                //added = 0;
+                            // TODO: Is not getting the difference into decreased. 
+                            decreased = 0;
 
-                // TODO: Is not getting the difference into decreased. 
-                decreased = 0;
-                if(NaN == false){
-                    
-                    decreased += monthlyPayment -  yourMonthlyPayments ;
-                    document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
-                }else{
-                    decreased = 0;
-                    document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
-                }
+                            if(NaN === false){
+                                decreased += monthlyPayment -  yourMonthlyPayments ;
+                                document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
+                            
+                            }else if(NaN != false){
+                                decreased += monthlyPayment -  yourMonthlyPayments ;
+                                document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
+                            
+                            
+                            }else if(NaN != true){
+                                decreased += monthlyPayment -  yourMonthlyPayments ;
+                                document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
+                            
+                            }else{
+                                decreased += monthlyPayment -  yourMonthlyPayments ;
+                                document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
+                            
+                            
+                            }
+/*
+                            if(NaN == false){
+                                
+                                decreased += monthlyPayment -  yourMonthlyPayments ;
+                                document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
+                            }else{
+                                decreased = 0;
+                                document.getElementById("thanks").innerHTML = 'We added nothing to your premium';
+                            }
+
+
+                            */
 
 
                 
-
-
-    
-                document.getElementById("clientName").value = msg;
-                document.getElementById("payment").value = yourMonthlyPayments;
-                document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator your payment decreased '+decreased;
-               }
+                            document.getElementById("clientName").value = msg;
+                            document.getElementById("payment").value = yourMonthlyPayments;
+                            document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator your payment decreased '+decreased;
+                        }
         
 
 
