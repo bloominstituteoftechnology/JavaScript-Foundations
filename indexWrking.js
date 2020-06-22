@@ -135,7 +135,7 @@ above 740 interest rate drops by 5%
 */
 
 
-function theMortgageCalculator(principal,interestRate,loanTerm,credit) {
+const theMortgageCalculator = (principal,interestRate,loanTerm,credit) => {
 
     
 
@@ -294,7 +294,7 @@ function theMortgageCalculator(principal,interestRate,loanTerm,credit) {
         //location.reload();   
     }
 
-}
+} ;  //End Regular Calculator
 
 const reg = () => {
     var yourName = document.getElementById("input1").value;
@@ -324,6 +324,9 @@ varint = varinterest();
     console.log(v);
 };
 const getUserInput = () =>{
+
+    //var l =  document.querySelector('.varInt:checked').value;
+  //  document.getElementById('formerror').innerHTML = l.value+'hi';
   reg();
 //init();
     
