@@ -69,10 +69,10 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-function mortgageCalculator(P, I, years) {
+/*function mortgageCalculator(P, I, years) {
     console.log(P * I / 12 * (Math.pow(1 + I / 12, years * 12)) / (Math.pow(1 + I / 12, years * 12) - 1));
 }
-mortgageCalculator(200000, 0.05, 30);
+mortgageCalculator(200000, 0.05, 30);*/
 
 
 // 🏡 Task 5: Conditionals
@@ -83,6 +83,23 @@ Then, add control flow within your function such that IF creditScore is above 74
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
 
+function mortgageCalculator(P, I, years, creditScore) {
+    
+    let monthlyRate = P * I / 12 * (Math.pow(1 + I / 12, years * 12)) / (Math.pow(1 + I / 12, years * 12) - 1);
+    
+    if (creditScore > 740) {
+        console.log(monthlyRate * 0.95);
+    } else if (creditScore < 660) {
+        console.log(monthlyRate * 1.05);
+    } else {
+        console.log(monthlyRate);
+    }
+}
+mortgageCalculator(200000, 0.05, 30, 740);
+mortgageCalculator(200000, 0.05, 30, 660);
+mortgageCalculator(200000, 0.05, 30, 425);
+mortgageCalculator(200000, 0.05, 30, 689);
+mortgageCalculator(200000, 0.05, 30, 800);
 
 
 
