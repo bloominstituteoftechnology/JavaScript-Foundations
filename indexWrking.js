@@ -79,33 +79,6 @@ to increase an interest rate by 5% you'd do monthlyRate * 1.05.
 
 
 
-function mortgageCalculator() {
-
-    var yourName = document.getElementById("input1").value;
-    theClient = yourName;
-    var principal = parseFloat(document.getElementById("principal").value);
-
-    var loanTerm = parseFloat(document.getElementById("loanTerm").value);
-
-    var interestRate = parseFloat(document.getElementById("interestRate").value);
-
-    var percentageRate = interestRate / 1200;
-    var lengthOfLoan = 12 * loanTerm;
-    var monthlyPayment = (principal * percentageRate) / (1 - (Math.pow((1 + percentageRate) , lengthOfLoan * -1)));
-    monthlyPayment = monthlyPayment.toFixed(2);
-    var msg = theClient+' Your Monthly Mortgage Payment is '+monthlyPayment;
-    //document.getElement("p").value = msg;
-
-    // Write to a new page
-    //document.write(msg);
-    // or write to the current form
-
-    document.getElementById("clientName").value = msg;
-    document.getElementById("payment").value = monthlyPayment;
-
-
-}
-
 let theClient = '';
 let principal = 0;
 let loanTerm = 0;
@@ -173,9 +146,11 @@ const theMortgageCalculator = (principal,interestRate,loanTerm,credit) => {
                     yourMonthlyPayments = yourMonthlyPayments * 1.05;
                     var msg = theClient+' Your Monthly Mortgage Payment is '+yourMonthlyPayments;
                    
-        
+        // Messages
                     document.getElementById("clientName").value = msg;
                     document.getElementById("payment").value = yourMonthlyPayments;
+                    console.log(msg);
+                    console.log(yourMonthlyPayments);
                   // added = 0;
 
 
@@ -185,20 +160,26 @@ const theMortgageCalculator = (principal,interestRate,loanTerm,credit) => {
                             added = 0;
                             added = yourMonthlyPayments - monthlyPayment;
                             document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                            console.log("Interest Rate"+ interestRate);
+                            console.log("We added " + added + "to your premium");
                         }else if(NaN != false){
                             added = 0;
                             added = yourMonthlyPayments - monthlyPayment;
                             document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
-                        
+                            console.log("Interest Rate"+ interestRate);
+                            console.log("We added " + added + "to your premium");
                         }else if(NaN != true){
                             added = 0;
                             added = yourMonthlyPayments - monthlyPayment;
                             document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                            console.log("Interest Rate"+ interestRate);
+                            console.log("We added " + added + "to your premium");
                         }else{
                             added = 0;
                             added = yourMonthlyPayments - monthlyPayment;
                             document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
-                        
+                            console.log("Interest Rate"+ interestRate);
+                            console.log("We added " + added + "to your premium");
                         }
                 }
 
@@ -220,6 +201,9 @@ const theMortgageCalculator = (principal,interestRate,loanTerm,credit) => {
     
                 document.getElementById("clientName").value = msg;
                 document.getElementById("payment").value = monthlyPayment;
+                console.log(msg);
+                console.log(monthlyPayment);
+                console.log("Thanks for using our Payment Locator");
                 document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator';
                }
 
@@ -250,20 +234,25 @@ const theMortgageCalculator = (principal,interestRate,loanTerm,credit) => {
                             if(NaN === false){
                                 decreased += monthlyPayment -  yourMonthlyPayments ;
                                 document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
+                                console.log("Interest Rate"+ interestRate);
+                                console.log("We added " + decreased + " to your premium");
                             
                             }else if(NaN != false){
                                 decreased += monthlyPayment -  yourMonthlyPayments ;
                                 document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
-                            
+                                console.log("We added " + decreased + " to your premium");
+                                console.log("Interest Rate"+ interestRate);
                             
                             }else if(NaN != true){
                                 decreased += monthlyPayment -  yourMonthlyPayments ;
                                 document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
-                            
+                                console.log("Interest Rate"+ interestRate);
+                                console.log("We added " + decreased + " to your premium");
                             }else{
                                 decreased += monthlyPayment -  yourMonthlyPayments ;
                                 document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
-                            
+                                console.log("Interest Rate"+ interestRate);
+                                console.log("We added " + decreased + " to your premium");
                             
                             }
 /*
@@ -284,6 +273,9 @@ const theMortgageCalculator = (principal,interestRate,loanTerm,credit) => {
                             document.getElementById("clientName").value = msg;
                             document.getElementById("payment").value = yourMonthlyPayments;
                             document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator your payment decreased '+decreased;
+                            console.log(msg);
+                            console.log(yourMonthlyPayments);
+                            console.log(decreased);
                         }
         
 
@@ -291,6 +283,7 @@ const theMortgageCalculator = (principal,interestRate,loanTerm,credit) => {
 
 } else if(credit > 800){
         document.getElementById("formerror").innerHTML = "No Credit Score given";
+        console.log("No Credit Score given");
         //location.reload();   
     }
 
@@ -299,11 +292,15 @@ const theMortgageCalculator = (principal,interestRate,loanTerm,credit) => {
 const reg = () => {
     var yourName = document.getElementById("input1").value;
     theClient = yourName;
-     principal = parseFloat(document.getElementById("principal").value);
-     loanTerm = parseFloat(document.getElementById("loanTerm").value);
-     credit = parseInt(document.getElementById("creditScore").value);
+    principal = parseFloat(document.getElementById("principal").value);
+    loanTerm = parseFloat(document.getElementById("loanTerm").value);
+    credit = parseInt(document.getElementById("creditScore").value);
     interestRate = parseFloat(document.getElementById("interestRate").value);
-    console.log(interestRate);
+    console.log("principal " + principal);
+    console.log("loanTerm " + loanTerm);
+    console.log("credit " + credit);
+    console.log("Interest rate " + interestRate);
+    console.log("theClient's Name " + theClient);
 
     theMortgageCalculator(principal,interestRate,loanTerm,credit);
 };
@@ -396,24 +393,33 @@ const getPayment = (principal,interestRate,loanTerm,credit) => {
         
                     document.getElementById("clientName").value = msg;
                     document.getElementById("payment").value = yourMonthlyPayments;
+                    console.log(msg);
+                    console.log(yourMonthlyPayments);
                    added = 0;
                    if(NaN === false){
                     added = 0;
                     added = yourMonthlyPayments - monthlyPayment;
                     document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                    console.log("Interest Rate "+ interestRate);
+                    console.log("We added "+ added + " to your premium");
                 }else if(NaN != false){
                     added = 0;
                     added = yourMonthlyPayments - monthlyPayment;
                     document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
-                
+                    console.log("Interest Rate "+ interestRate);
+                    console.log("We added "+ added + " to your premium");
                 }else if(NaN != true){
                     added = 0;
                     added = yourMonthlyPayments - monthlyPayment;
                     document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                    console.log("Interest Rate "+ interestRate);
+                    console.log("We added "+ added + " to your premium");
                 }else{
                     added = 0;
                     added = yourMonthlyPayments - monthlyPayment;
                     document.getElementById("thanks").innerHTML = 'We added '+added+' to your premium';
+                    console.log("Interest Rate "+ interestRate);
+                    console.log("We added "+ added + " to your premium");
                 
                 }
 
@@ -438,6 +444,9 @@ const getPayment = (principal,interestRate,loanTerm,credit) => {
                 document.getElementById("clientName").value = msg;
                 document.getElementById("payment").value = monthlyPayment;
                 document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator';
+                console.log(msg);
+                console.log(monthlyPayment);
+                console.log("Thanks for using our Payment Locator");
                }
 
                // Unchanged 660 740
@@ -464,21 +473,25 @@ const getPayment = (principal,interestRate,loanTerm,credit) => {
                             if(NaN === false){
                                 decreased += monthlyPayment -  yourMonthlyPayments ;
                                 document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
+                                console.log("Interest Rate "+ interestRate);
+                                console.log("We added " + decreased + " to your premium");
                             
                             }else if(NaN != false){
                                 decreased += monthlyPayment -  yourMonthlyPayments ;
                                 document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
-                            
+                                console.log("Interest Rate "+ interestRate);
+                                console.log("We added " + decreased + " to your premium");
                             
                             }else if(NaN != true){
                                 decreased += monthlyPayment -  yourMonthlyPayments ;
                                 document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
-                            
+                                console.log("Interest Rate "+ interestRate);
+                                console.log("We added " + decreased + " to your premium");
                             }else{
                                 decreased += monthlyPayment -  yourMonthlyPayments ;
                                 document.getElementById("thanks").innerHTML = 'We added '+decreased+' to your premium';
-                            
-                            
+                                console.log("Interest Rate "+ interestRate);
+                                console.log("We added " + decreased + " to your premium");
                             }
 
 
@@ -486,13 +499,20 @@ const getPayment = (principal,interestRate,loanTerm,credit) => {
                 document.getElementById("clientName").value = msg;
                 document.getElementById("payment").value = yourMonthlyPayments;
                 document.getElementById("thanks").innerHTML = 'Thanks for using our Payment Locator your payment decreased '+decreased;
-               }
+                console.log(msg);
+                console.log(yourMonthlyPayments);
+                console.log('Thanks for using our Payment Locator your payment decreased '+decreased);
+
+            
+            
+            }
         
 
 
 
 } else if(credit > 800){
         document.getElementById("formerror").innerHTML = "No Credit Score given";
+        console.log("No Credit Score Given");
         //location.reload();   
     }
 };
@@ -504,15 +524,19 @@ function variableInterestRateCalculator(){
      loanTerm = parseFloat(document.getElementById("loanTerm").value);
      credit = parseInt(document.getElementById("creditScore").value);
     interestRate = parseFloat(document.getElementById("interestRate").value);
+    console.log("Principal " + principal);
+    console.log("LoanTerm " + loanTerm);
+    console.log("credit " + credit);
+    console.log("interestRate " + interestRate);
+
 // Make 10 different payments at each interestrate show into an array posted in textbox
     for(let n = 0; n < 10; n++){
         
         getPayment(principal,interestRate,loanTerm,credit);
         varAr[n] = yourMonthlyPayments;
         interestRate = interestRate - 0.5;
-        console.log('int'+interestRate);
+        console.log('interest rate in variable Calc '+interestRate);
     }
-  // TODO Make interest rate the interest rate
 for(let n = 0; n < varAr.length; n++){
     
     console.log('monthly payment with interest of '+interestRate + ' is '+varAr[n]);
