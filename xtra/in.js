@@ -16,7 +16,7 @@
 (1) Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
 (2) Create another variable called `periods` and give it the value of years*12.
 */
-let monthlyInterestRate = interest;
+
 
 
 
@@ -330,7 +330,8 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-const getPayment = (principal,interestRate,loanTerm,credit) => {
+function variableInterestRateCalculator(principal,interestRate,loanTerm,credit){
+
     if(credit <= 800){
         // TODO: Credit banner
         document.getElementById("formerror").innerHTML = "";
@@ -461,15 +462,6 @@ const getPayment = (principal,interestRate,loanTerm,credit) => {
         document.getElementById("formerror").innerHTML = "No Credit Score given";
         //location.reload();   
     }
-};
-
-function variableInterestRateCalculator(principal,interestRate,loanTerm,credit){
-// Make 10 different payments at each interestrate show into an array posted in textbox
-    for(let n = 0; n < 10; n++){
-        interestRate = interestRate - 0.5;
-        getPayment(principal,interestRate,loanTerm,credit);
-    }
-  
 
 
 

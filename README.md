@@ -9,6 +9,13 @@ The module challenge is the afternoon project or assignment that students work t
 ## Objectives
 
 - use let, const, var and demonstrate their differences.
+
+let - is the new es6 syntax and allows you change its value but not type and cannot be called outside its scope block. 
+
+var - allows you to change it value and type and it can be called beyond its scope block. 
+
+const - never allows you to change its value or type and can be called outside its scope block
+
 - understand and be able to use different operators.
 - write a basic for loop / while loop.
 - write control flow using if/else statements.
