@@ -33,7 +33,7 @@
       height: 100%;
     }
   </style>
-  <script src="indexWrking.js"></script>
+  <script src="index.js"></script>
   
   </head>
   <body>
@@ -46,45 +46,36 @@
 <form >
   <table>
     <tr>
-      <select id="selectbox" name="" onchange="javascript:location.href = this.value;">
-        <option onclick = "getUserInput()" value="index.html" >Regular Calculator</option>
-        <option onclick = "getVinput()" value="varint.html" >varInt</option>
-      </select>
-
-
-      <td class = "labels">Vaariable Interest Rates 10X!! Option</td>
-      <td class = "textbox"><input type = "checkbox" class="varInt" id = "varInt"  onclick = "getVinput()"></td>
+        
+      <td class = "labels">Regular Calculator Rates Option</td>
+      <td class = "textbox"><input type = "checkbox" class="varInt" id = "varInt"  value="varint" onclick = "getUserInput()"></td>
     </tr>
     <tr>
         <td class = "labels">What is your name?</td>
-        <td class = "textbox"><input type = "text" id = "input1" onclick = "getUserInput()"></td>
+        <td class = "textbox"><input type = "text" id = "input1" onclick = "getVarInput()"></td>
       </tr>
     <tr>
       <td class = "labels">The Principal Loan Amount Barrowed</td>
-      <td class = "textbox"><input type = "number" id = "principal" onclick = "getUserInput()"></td>
+      <td class = "textbox"><input type = "number" id = "principal" onclick = "getVarInput()"></td>
     </tr>
     <tr>
       <td class = "labels">Years of Payment</td>
-      <td class = "textbox"><input type = "number" id = "loanTerm" onclick = "getUserInput()"></td>
+      <td class = "textbox"><input type = "number" id = "loanTerm" onclick = "getVarInput()"></td>
     </tr>
     <tr>
       <td class = "labels">Credit Score</td>
-      <td class = "textbox"><input type = "number" id = "creditScore" onclick = "getUserInput()"></td>
+      <td class = "textbox"><input type = "number" id = "creditScore" onclick = "getVarInput()"></td>
     </tr>
     <tr>
       <td class = "labels">The Interest Rate</td>
-      <td class = "textbox"><input type = "number" id = "interestRate" onclick = "getUserInput()"></td>
-    </tr>
-    <tr>
-      <td class = "labels">You're using</td>
-      <p id ="using" class = "textbox"></p>
+      <td class = "textbox"><input type = "number" id = "interestRate" onclick = "getVarInput()"></td>
     </tr>
     <tr>
       <td class = "labels"><textarea type = "text" id = "clientName"></textarea></td>
       <td class = "textbox"><input type = "number" id = "payment" name = "monthlyPayment"></td>
     </tr>
     <tr>
-      <td class = "button"><button id="calcIt" onclick = "getUserInput()">Calculate Monthly Payments</button></td>
+      <td class = "button"><button onclick = "getVarInput()">Calculate Monthly Payments</button></td>
       <td class = "button"><input type = "reset" name = "Reset"></td>
     </tr>
   </table>
