@@ -5,9 +5,9 @@
  // Create another value called name and give it the value of your own name.
 
 let name="Clauderlys";
-const principal=200000;
-const rate=0.05;
-const years=30;
+let principal=200000;
+let rate=0.05;
+let years=30;
 
 
 console.log(name);
@@ -17,12 +17,15 @@ console.log(name);
 // (1) Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12.
 // (2) Create another variable called `periods` and give it the value of years*12.
 
-const monthlyInterestRate=rate/12;
-const periods= years*12;
+let monthlyInterestRate=rate/12;
+let periods= years*12;
 
 // 🏡 Task 2: Harder Math
  // Create your calculator! Use the formula in the ReadMe (also below) to run calculations on your numbers.
  // Save the final value into a variable called monthlyRate.
+ //
+ // var variableInterestRate=principal[rate(1+rate)^years]/[(1 + rate)^years-1];
+ // console.log(variableInterestRate);
 
 //let M =principal[ rate ( 1 + rate )^years ] / [ ( 1 + rate )^years – 1 ];
 
@@ -38,17 +41,33 @@ const periods= years*12;
 
 // When your math is correct, monthlyRate will equal 1073.64
 
- let n1=(1 + monthlyInterestRate)^years;
+ let n1=Math.pow(1 + monthlyInterestRate,periods);
  let numerator=principal * n1 * monthlyInterestRate;
  let denominator=n1-1;
-
+ let monthlyRate=numerator/denominator;
+  console.log(monthlyRate);
 
 
 
 // 🏡 Task 3: Function
-//  Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
+//  Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name},
+ // your monthly rate is ${monthlyRate}"
 //
 // If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
+
+function mortgageCalculator(princial,rate,name,years){
+
+  const operator=Math.pow(1+monthlyInterestRate,periods) + princial*n1*monthlyInterestRate + denominator +;
+  // princial[`${rate} + 1 + ${rate},periods`]/[1+rate,periods-1];
+  return calculator;
+
+}
+
+
+
+
+console.log(mortgageCalculator(150000,0.04,"clauderlys",20));
+  //console.log(`${name} + " your monthly rate is " + ${monthlypay}`);
 
 
 
