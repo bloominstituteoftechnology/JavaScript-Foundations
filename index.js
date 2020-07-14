@@ -3,10 +3,10 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
-
-
-
-
+let principal = 20000; 
+let interestRate = 0.05; 
+let years = 30;  
+let myName = Robert Ochoa Jr;
 
 // 🏡 Task 1.5: Simple Math
 /* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate. 
@@ -14,26 +14,26 @@
 (1) Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
 (2) Create another variable called `periods` and give it the value of years*12.
 */
-
-
-
-
+let monthlyInterestRate = (interestRate / 12);
+let period = (years * 12);
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe (also below) to run calculations on your numbers. Save the final value into a variable called monthlyRate. 
-
 M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
-
-Hint: while these calculations can be done in one line, it might be helpful to create seperate variables to hold parts of your equation. That might look like this:
-
-(1) Create a variable called n1 and set it equal to  (1 + monthlyInterestRate )^N
-(2) Create a variable called numerator and set it equal to p * n1 * monthlyInterestRate
-(3) Create a variable called denominator and set it equal to n1 - 1 
-(4) Create a variable called monthlyRate and set it equal to numerator/denominator
-
-Hint #2: you'll need to use the `math` object for parts of this calculation!
-
-When your math is correct, monthlyRate will equal 1073.64
 */
+let principal = [ monthlyInterestRate(1+monthlyInterestRate)^period] / [(1+monthlyInterestRate)^period-1]
+
+
+//Hint: while these calculations can be done in one line, it might be helpful to create seperate variables to hold parts of your equation. That might look like this:
+
+(1//) Create a variable called n1 and set it equal to  (1 + monthlyInterestRate )^N
+//(2) Create a variable called numerator and set it equal to p * n1 * monthlyInterestRate
+//(3) Create a variable called denominator and set it equal to n1 - 1 
+//(4) Create a variable called monthlyRate and set it equal to numerator/denominator
+
+//Hint #2: you'll need to use the `math` object for parts of this calculation!
+
+//When your math is correct, monthlyRate will equal 1073.64
+
 
 
 
