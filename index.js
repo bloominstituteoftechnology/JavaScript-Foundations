@@ -118,7 +118,7 @@ function mortgageCalculator(p, i, n, c){
     let numerator = (principal * n1 * monthlyInterestRate)
     let denominator = (n1 - 1);
     let monthlyRate = (numerator / denominator)
-    let result = Math.floor(monthlyRate * 100) / 100
+    let result = (Math.round(monthlyRate * 100) / 100).toFixed(2);
 
 
 
