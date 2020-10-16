@@ -102,7 +102,7 @@ Then, add control flow within your function such that IF creditScore is above 74
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
 
-function mortgageCalculator(p, i, n, c){
+let mortgageCalculator = function(p, i, n, c){
     let principal = p;
     let interestRate = i;
     if(c > 740) {
@@ -145,7 +145,7 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-function variableInterestRate(p, i, n){
+let variableInterestRate = function(p, i, n){
     for (let x = i - 0.02; x < i + 0.02; x += 0.005) {
         let principal = p;
         let rate = x.toFixed(3);
@@ -163,11 +163,11 @@ function variableInterestRate(p, i, n){
         let numerator = (principal * n1 * monthlyInterestRate)
         let denominator = (n1 - 1);
         let monthlyRate = (numerator / denominator);
-        let result = (Math.round(monthlyRate * 100) / 100).toFixed(0);
+        var result = (Math.round(monthlyRate * 100) / 100).toFixed(0);
+        return result;
 
 
-
-    console.log(`${name}, with an intrest rate of ${interestRate} your monthly rate is ${result}`)
+    // console.log(`${name}, with an intrest rate of ${interestRate} your monthly rate is ${result}`)
     }
 }
 
@@ -179,8 +179,16 @@ variableInterestRate(200000, 0.04, 30);
 /* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
 
 /*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
+let additionalFees = function(t, i, h) {
+    tax = t;
+    insurance = i;
+    hoa = h;
+    var feeResult = (tax + insurance + hoa);
+    return feeResult;
+}
 
-
+additionalFees(95, 250, 200)
+console.log(`Your total monthly spending is ${feeResult}`)
 /* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
 
 
