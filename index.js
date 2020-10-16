@@ -146,9 +146,11 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 */
 
 function variableInterestRate(p, i, n){
-    for (let x = i - 0.02; x < i + 0.02; x += 0.0005) {
+    for (let x = i - 0.02; x < i + 0.02; x += 0.005) {
         let principal = p;
-        let interestRate = x;
+        let rate = x.toFixed(3);
+        let interestRate = rate*1
+
         // if(c > 740) {
         //     interestRate *= 0.95;
         // } if (c < 640) {
@@ -156,22 +158,20 @@ function variableInterestRate(p, i, n){
         // }
 
         let years = n; 
-        let name = 'Trevor'
-        let monthlyInterestRate = (interestRate / 12);
         let periods = (years * 12);
         let n1 = Math.pow ((1+ monthlyInterestRate), periods);
         let numerator = (principal * n1 * monthlyInterestRate)
         let denominator = (n1 - 1);
-        let monthlyRate = (numerator / denominator)
-        let result = (Math.round(monthlyRate * 100) / 100).toFixed(0);}
+        let monthlyRate = (numerator / denominator);
+        let result = (Math.round(monthlyRate * 100) / 100).toFixed(0);
 
 
 
     console.log(`${name}, with an intrest rate of ${interestRate} your monthly rate is ${result}`)
-
+    }
 }
 
-variableInterestRate(200000, 0.04, 30)
+variableInterestRate(200000, 0.04, 30);
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
