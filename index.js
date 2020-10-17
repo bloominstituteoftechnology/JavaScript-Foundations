@@ -36,6 +36,13 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
+const n1 = 1 + monthlyInterestRate;
+const n2 = Math.pow(n1, periods);
+const n3 = monthlyInterestRate * n2;
+const n4 = principal * n3;
+const n5 = n2 - 1;
+let monthlyRate = n4 / n5;
+
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
 
