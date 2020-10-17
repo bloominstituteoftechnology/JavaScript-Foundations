@@ -49,7 +49,17 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
+var n1 = (1 + monthlyInterestRate)^N
+console.log(n1)
 
+var numerator = (p * n1 * monthlyInterestRate)
+console.log(numerator)
+
+var denominator = (n1 - 1)
+console.log(denominator)
+
+var monthlyRate = (numerator / denominator)
+console.log(monthlyRate)
 
 
 
