@@ -4,17 +4,19 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
-var principal = 20000;
+var principal = 200000;
 console.log(principal)
 
-var interestRate = 0.05
+var interestRate = 0.05;
 console.log(interestRate)
 
-var years = 30
+var years = 30;
 console.log(years)
 
-const name = "Dan"
+var name = "Dan"
 console.log(name)
+
+
 
 
 
@@ -30,6 +32,7 @@ console.log(monthlyInterestRate)
 
 var periods= (years * 12)
 console.log(periods)
+
 
 
 // 🏡 Task 2: Harder Math
@@ -49,17 +52,28 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
-var n1 = (1 + monthlyInterestRate)^N
+
+
+/* var p = [ interestRate(1 + interestRate)^var] / [ (1 + interestRate)^var -1]
+console.log(p) *///--this is how the formula should look
+
+
+var n1 = Math.pow (1 + monthlyInterestRate, periods);
 console.log(n1)
 
-var numerator = (p * n1 * monthlyInterestRate)
+var numerator = principal * n1 * monthlyInterestRate;
 console.log(numerator)
 
-var denominator = (n1 - 1)
+var denominator = n1 - 1;
 console.log(denominator)
 
-var monthlyRate = (numerator / denominator)
+var monthlyRate = numerator/denominator;
 console.log(monthlyRate)
+
+
+
+
+
 
 
 
@@ -69,6 +83,12 @@ console.log(monthlyRate)
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
+function mortgageCalculator() 
+{ console.log(name,"your monthly rate is",monthlyRate);
+
+}
+
+mortgageCalculator();
 
 
 
@@ -80,7 +100,29 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
+var n1 = Math.pow (1 + monthlyInterestRate, 300);
 
+
+var numerator = principal * n1 * monthlyInterestRate;
+
+var denominator = n1 - 1;
+
+var monthlyRate = numerator/denominator;
+
+
+var principal = 150000;
+console.log(principal)
+
+var interestRate = 0.10;
+console.log(interestRate)
+
+var years = 25;
+
+var name = "Bob";
+console.log(name)
+
+
+mortgageCalculator();
 
 
 
