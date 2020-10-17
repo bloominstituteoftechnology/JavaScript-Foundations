@@ -189,7 +189,7 @@ function variableInterestRate()
 //data return
     return `${name}, with an interest rate of ${roundedVariableInterest}, your monthly rate is ${roundedMonthlyRate}`;
     
-//adds and equalizes variableInterestRate with 0.005
+//adds and equalizes interestRate with 0.005
 
        interestRate += 0.005;
     }
