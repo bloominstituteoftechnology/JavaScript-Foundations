@@ -49,6 +49,24 @@ let monthlyRate = n4 / n5;
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
+function mortgageCalculator() {
+  let principal = 200000;
+  let interestRate = 0.05;
+  let years = 30;
+  const name = "Natalia Golebiewski";
+  let monthlyInterestRate = interestRate / 12;
+  let periods = years * 12;
+  const n1 = 1 + monthlyInterestRate;
+  const n2 = Math.pow(n1, periods);
+  const n3 = monthlyInterestRate * n2;
+  const n4 = principal * n3;
+  const n5 = n2 - 1;
+  let monthlyRate = n4 / n5;
+  console.log(name, ", your monthly rate is ", monthlyRate, ".");
+}
+
+mortgageCalculator();
+
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
 
