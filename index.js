@@ -4,7 +4,9 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
-
+let principal = principal(200000);
+let interest = interest(0.05);
+let years = years(30);
 
 
 
@@ -12,6 +14,7 @@
 /* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate. 
 
 (1) Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
+
 (2) Create another variable called `periods` and give it the value of years*12.
 */
 
