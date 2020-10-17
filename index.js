@@ -74,6 +74,19 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
+function calculations(principal, interestRate, years) {
+  const name = "Natalia Golebiewski";
+  let monthlyInterestRate = interestRate / 12;
+  let periods = years * 12;
+  const n1 = 1 + monthlyInterestRate;
+  const n2 = Math.pow(n1, periods);
+  const n3 = monthlyInterestRate * n2;
+  const n4 = principal * n3;
+  const n5 = n2 - 1;
+  let monthlyRate = n4 / n5;
+}
+
+calculations(200000, 0.05, 30);
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
 
