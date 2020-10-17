@@ -99,30 +99,27 @@ mortgageCalculator();
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
+function myCalculator(principal, interestRate, years){
 
-var n1 = Math.pow (1 + monthlyInterestRate, 300);
+var periods = years * 12
 
+var n1 = Math.pow (1 + monthlyInterestRate, periods)
 
-var numerator = principal * n1 * monthlyInterestRate;
+var numerator = principal * n1 * monthlyInterestRate
 
-var denominator = n1 - 1;
+var denominator = n1 - 1
 
-var monthlyRate = numerator/denominator;
+var monthlyRate = numerator/denominator
 
-
-var principal = 150000;
-console.log(principal)
-
-var interestRate = 0.10;
-console.log(interestRate)
-
-var years = 25;
-
-var name = "Bob";
-console.log(name)
+console.log(monthlyRate)
 
 
-mortgageCalculator();
+}
+
+
+
+
+myCalculator(150000, 0.1, 5);
 
 
 
