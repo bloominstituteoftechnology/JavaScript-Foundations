@@ -4,9 +4,11 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
-let principal = principal(200000);
-let interest = interest(0.05);
-let years = years(30);
+let principal = 200000;
+let interest = 0.05;
+let years = 30;
+let name = 'Oscar';
+
 
 
 
@@ -18,6 +20,12 @@ let years = years(30);
 (2) Create another variable called `periods` and give it the value of years*12.
 */
 
+let monthlyInterestRate = (interest / 12); {
+    console.log(monthlyInterestRate);
+}
+let periods = (years * 12); {
+    console.log(periods);
+}
 
 
 
@@ -38,7 +46,22 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
+const n1 = (1 + monthlyInterestRate)**periods; {
+    console.log(n1);
+}
 
+const numerator = (principal * n1 * monthlyInterestRate); {
+    console.log(numerator);
+}
+
+const denominator = (n1 - 1); {
+    console.log(denominator);
+}
+
+let monthlyRate = (numerator / denominator); {
+
+    console.log(monthlyRate);
+}
 
 
 // 🏡 Task 3: Function
@@ -46,7 +69,32 @@ When your math is correct, monthlyRate will equal 1073.64
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
+function mortgageCalculator(name){
 
+const n1 = (1 + monthlyInterestRate)**periods; {
+    console.log(n1);
+}
+
+const numerator = (principal * n1 * monthlyInterestRate); {
+    console.log(numerator);
+}
+
+const denominator = (n1 - 1); {
+    console.log(denominator);
+}
+
+let monthlyRate = (numerator / denominator); {
+
+    console.log(monthlyRate);
+    return `${name}, your monthly rate is ${monthlyRate}`;
+}
+}
+mortgageCalculator('Oscar'); {
+    
+    
+}
+var output = mortgageCalculator('Oscar');
+console.log(output);
 
 
 
