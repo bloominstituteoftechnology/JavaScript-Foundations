@@ -4,7 +4,17 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
+var principal = 20000;
+console.log(principal)
 
+var interestRate = 0.05
+console.log(interestRate)
+
+var years = 30
+console.log(years)
+
+const name = "Dan"
+console.log(name)
 
 
 
@@ -15,7 +25,11 @@
 (2) Create another variable called `periods` and give it the value of years*12.
 */
 
+var monthlyInterestRate= (interestRate / 12)
+console.log(monthlyInterestRate)
 
+var periods= (years * 12)
+console.log(periods)
 
 
 // 🏡 Task 2: Harder Math
@@ -34,6 +48,7 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
+
 
 
 
