@@ -155,12 +155,11 @@ function variableInterestRate(principal, interestRate, years){
 
     for (let interestRate = .02; interestRate <= .06; interestRate += .005) {
         let monthlyRate = principal * interestRate / 12 * (Math.pow(1 + interestRate / 12, years * 12)) / (Math.pow(1 + interestRate / 12, years * 12) - 1);
-        console.log(name + ", with an interest rate of " + interestRate.toFixed(3) + ", your monthly interest rate is $" + Math.round(monthlyRate + interestRate));
+        console.log(name + ", with an interest rate of " + interestRate.toFixed(3) + ", your monthly interest rate is $" + Math.round(monthlyRate));
     }
 
 }
 variableInterestRate(200000, 0.04, 30);
-
 
 
 
