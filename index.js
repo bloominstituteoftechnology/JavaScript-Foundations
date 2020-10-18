@@ -157,13 +157,12 @@ function myCalculator(principal, interestRate, years, creditScore){
         console.log('average credit')
     }
     
-    console.log("$",monthlyRate.toFixed(2))
+    console.log(name,"your monthly rate is $",monthlyRate.toFixed(2))
     
     
-    }
+}    
 
-
-myCalculator(150000, 0.05, 20, 740);
+myCalculator(150000, 0.05, 20, 800);
 
 
 
@@ -184,13 +183,16 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 */
 
 
+
+
+
 /* <---Reference the code below--->
 for (let i= 0; i < 5; i++) {
     console.log('hello world'
 
 }*/ 
 
-variableInterestRate () {
+function variableInterestRate() {
     
     var periods = years * 12
     
