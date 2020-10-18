@@ -4,10 +4,57 @@
     <title>JavaScript Foundations</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
   </head>
   <body>
-    <p>Open up the console to check your work!</p>
+ 
+
+    <p class="introText">Want to know your mortgage?</p>
     
-      <script src="index.js"></script>
+    <div class="container2">
+      <button class="mortgageButton" onclick="mortgageCalculator()">Mortgage Calculator</button>
+    </div>
+
+  
+      <p id="result"></p>
+
+  
+
+    <script> 
+    // function myFunction() {
+    //   var person = prompt("Please enter your name", "Harry Potter");
+    //   if (person != null) {
+    //     document.getElementById("demo").innerHTML =
+    //     "Hello " + person + "! How are you today?";
+    //   }
+    // }
+
+    function mortgageCalculator() {
+      // var name = prompt("Please enter your name.");
+    
+      var principal = prompt("Please enter your principal.");
+    
+      let interestRate = 0.05;
+      let years = 30;
+
+      let monthlyInterestRate = interestRate / 12;
+      let periods = years * 12;
+
+      let n1 = Math.pow((1 + monthlyInterestRate),periods);
+      let numerator = principal * n1 * monthlyInterestRate;
+      let denominator = n1 - 1;
+      let monthlyRate = numerator / denominator;
+      monthlyRate = monthlyRate.toFixed(2);
+
+      // return `${name}, your monthly rate is ${monthlyRate}.`
+      document.getElementById("result").innerHTML =
+  "Your monthly rate is $" + monthlyRate + ".";
+
+    }
+
+</script>
+
+<!--      <script src="index.js"></script> -->
   </body>
 </html>
