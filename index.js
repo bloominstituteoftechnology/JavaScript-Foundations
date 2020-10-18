@@ -4,18 +4,12 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
-
-
-
-
 // 🏡 Task 1.5: Simple Math
 /* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate. 
 
 (1) Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
 (2) Create another variable called `periods` and give it the value of years*12.
 */
-
-
 
 
 // 🏡 Task 2: Harder Math
@@ -103,3 +97,32 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+
+  function mortgageCalculator(principal, interestRate, years, creditScore){
+    const name = "Ally";
+    let monthlyInterestRate = ( interestRate / 12 )
+    let periods = ( years * 12 ) 
+    let i = monthlyRate
+    
+    let variableInterestRate = ( monthlyRate * 0.95 )
+    for (let i = 0; i < 10; i + 0.95) {
+      console.log(name + ",with an interest rate of" + monthlyInterestRate + "your monthly rate is" + variableInterestRate + "<br>")
+    }
+    let n1 = Math.pow((1 + monthlyInterestRate ) **periods )
+    let numerator = principal * n1 * monthlyInterestRate
+    let denominator = n1 - 1
+    let monthlyRate = numerator/denominator 
+    
+    }
+    if (creditScore > 740 ) { monthlyRate = (monthlyRate * 0.95);
+    }
+    else if (creditScore < 660 ) {monthlyRate = (monthlyRate * 1.05);
+    }
+    else if (creditScore <= 740 && creditScore >= 660) {monthlyRate = monthlyRate};
+  }
+    console.log(name + "your monthly rate is" + monthlyRate)}
+}
+
+  mortgageCalculator( 200000, 0.05, 30, 700)
+}
+
