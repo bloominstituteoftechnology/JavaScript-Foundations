@@ -1,13 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JavaScript Foundations</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <p>Open up the console to check your work!</p>
-    
-      <script src="index.js"></script>
+<head>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"/>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet"/>
+
+</head>
+
+<body class="container">
+  <div class="row">
+    <div class="span6">
+    <h1 align="center">JavaScript Foundations Mortgage Calculator</h1>
+      <form class="form-horizontal well"  name="MortgageMinder" >
+        <div class="control-group">
+          <label class="control-label">House Price</label>
+          <div class="controls">
+            <input type="text" onchange="checkForZero(this)" onblur="checkForZero(this)" size="7" value="750000" name="price"></input>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Interest Rate</label>
+          <div class="controls">
+          <input type="text" onchange="checkForZero(this)" onblur="checkForZero(this)" size="4" value="6" name="ir"></input>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Years</label>
+          <div class="controls">
+          <input type="text" onchange="checkForZero(this)" onblur="checkForZero(this)" size="4" value="30" name="term">
+          </input>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Down Payment</label>
+          <div class="controls">
+          <input type="text" size="7" onchange="calculatePayment(this.form)" value="0" name="dp">
+          
+          </input>
+          </div>
+        </div>
+        <br/>
+        <div class="control-group">
+          <label class="control-label">Mortgage Principle</label>
+          <div class="controls">
+          <input type="text" size="7" placeholder="Automatically Calculated" name="principle">
+          
+          </input>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Total Payments</label>
+          <div class="controls">
+          <input type="text" size="6" placeholder="Your Number Of Payments Are" name="payments">
+          
+          </input>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Monthly Payment</label>
+          <div class="controls">
+          <input type="text" placeholder="Monthly Payments" size="7" name="pmt">
+          </input>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+          <input type="button"  class="btn btn-primary btn-large" onclick="cmdCalc_Click(this.form)" value="Calculate" name="cmdCalc">
+          </input>
+          </div>
+        </div>
+      </form>
+      <p> This is a project. Please refer to you bank for actual </p>
+    </div>
+ </div>
   </body>
 </html>
