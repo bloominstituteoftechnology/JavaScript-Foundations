@@ -143,13 +143,13 @@ function myCalculator(principal, interestRate, years, creditScore){
     var monthlyRate = numerator/denominator
 
     if (creditScore > 740) {
-        monthlyRate * 0.95;
+        monthlyRate *= 0.95;
         console.log('perfect credit');
     }
     
     
     else if (creditScore < 660) {
-        monthlyRate * 1.05;
+        monthlyRate *= 1.05;
         console.log('bad credit');
     }
     
@@ -163,7 +163,7 @@ function myCalculator(principal, interestRate, years, creditScore){
     }
 
 
-myCalculator(150000, 0.05, 20, 741);
+myCalculator(150000, 0.05, 20, 740);
 
 
 
@@ -183,6 +183,45 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
+
+/* <---Reference the code below--->
+for (let i= 0; i < 5; i++) {
+    console.log('hello world'
+
+}*/ 
+
+variableInterestRate () {
+    
+    var periods = years * 12
+    
+    var n1 = Math.pow (1 + monthlyInterestRate, periods)
+
+    var numerator = principal * n1 * monthlyInterestRate    
+
+    var denominator = n1 - 1
+
+    var monthlyRate = numerator/denominator
+
+    if (creditScore > 740) {
+    monthlyRate *= 0.95;
+    console.log('perfect credit');
+}
+
+
+    else if (creditScore < 660) {
+    monthlyRate *= 1.05;
+    console.log('bad credit');
+}
+
+    else {
+    console.log('average credit')
+}
+
+
+console.log("$",monthlyRate.toFixed(2))
+
+
+}
 
 
 
