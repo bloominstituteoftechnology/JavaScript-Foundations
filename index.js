@@ -16,6 +16,8 @@ console.log(years)
 var name = "Dan"
 console.log(name)
 
+var creditScore = 800;
+
 
 
 
@@ -27,10 +29,10 @@ console.log(name)
 (2) Create another variable called `periods` and give it the value of years*12.
 */
 
-var monthlyInterestRate= (interestRate / 12)
+var monthlyInterestRate= interestRate / 12
 console.log(monthlyInterestRate)
 
-var periods= (years * 12)
+var periods= years * 12
 console.log(periods)
 
 
@@ -53,9 +55,6 @@ When your math is correct, monthlyRate will equal 1073.64
 */
 
 
-
-/* var p = [ interestRate(1 + interestRate)^var] / [ (1 + interestRate)^var -1]
-console.log(p) *///--this is how the formula should look
 
 
 var n1 = Math.pow (1 + monthlyInterestRate, periods);
@@ -84,7 +83,7 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 */
 
 function mortgageCalculator() 
-{ console.log(name,"your monthly rate is",monthlyRate);
+{ console.log(name,"your monthly rate is $",monthlyRate.toFixed(2));
 
 }
 
@@ -111,15 +110,14 @@ var denominator = n1 - 1
 
 var monthlyRate = numerator/denominator
 
-console.log(monthlyRate)
+console.log("$",monthlyRate.toFixed(2))
 
 
 }
 
 
-
-
 myCalculator(150000, 0.1, 5);
+
 
 
 
@@ -131,6 +129,41 @@ Then, add control flow within your function such that IF creditScore is above 74
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
 
+
+function myCalculator(principal, interestRate, years, creditScore){
+
+    var periods = years * 12
+    
+    var n1 = Math.pow (1 + monthlyInterestRate, periods)
+    
+    var numerator = principal * n1 * monthlyInterestRate
+    
+    var denominator = n1 - 1
+    
+    var monthlyRate = numerator/denominator
+
+    if (creditScore > 740) {
+        monthlyRate * 0.95;
+        console.log('perfect credit');
+    }
+    
+    
+    else if (creditScore < 660) {
+        monthlyRate * 1.05;
+        console.log('bad credit');
+    }
+    
+    else {
+        console.log('average credit')
+    }
+    
+    console.log("$",monthlyRate.toFixed(2))
+    
+    
+    }
+
+
+myCalculator(150000, 0.05, 20, 741);
 
 
 
