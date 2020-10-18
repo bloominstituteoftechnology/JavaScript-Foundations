@@ -4,17 +4,14 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
+
 var principal = 200000;
-console.log(principal)
 
 var interestRate = 0.05;
-console.log(interestRate)
 
 var years = 30;
-console.log(years)
 
 var name = "Dan"
-console.log(name)
 
 var creditScore = 800;
 
@@ -30,10 +27,10 @@ var creditScore = 800;
 */
 
 var monthlyInterestRate= interestRate / 12
-console.log(monthlyInterestRate)
+
 
 var periods= years * 12
-console.log(periods)
+
 
 
 
@@ -58,13 +55,13 @@ When your math is correct, monthlyRate will equal 1073.64
 
 
 var n1 = Math.pow (1 + monthlyInterestRate, periods);
-console.log(n1)
+
 
 var numerator = principal * n1 * monthlyInterestRate;
-console.log(numerator)
+
 
 var denominator = n1 - 1;
-console.log(denominator)
+
 
 var monthlyRate = numerator/denominator;
 console.log(monthlyRate)
@@ -98,25 +95,23 @@ mortgageCalculator();
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
-function myCalculator(principal, interestRate, years){
+function myCalculator(p, i, n){
 
-var periods = years * 12
+    var n1 = Math.pow((1 + (i/12)), (n*12));
+    
+    var numerator = p * n1 * (i/12);
+    
+    var denominator = n1 - 1;
+    
+    var monthlyRate = numerator / denominator ;
 
-var n1 = Math.pow (1 + monthlyInterestRate, periods)
-
-var numerator = principal * n1 * monthlyInterestRate
-
-var denominator = n1 - 1
-
-var monthlyRate = numerator/denominator
-
-console.log("$",monthlyRate.toFixed(2))
+    return console.log("$",monthlyRate.toFixed(2))
 
 
 }
 
 
-myCalculator(150000, 0.1, 5);
+myCalculator(150000, 0.1, 15);
 
 
 
@@ -130,39 +125,37 @@ Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by
 */
 
 
-function myCalculator(principal, interestRate, years, creditScore){
+function myCalculatorTwo(p, i, n, creditScore){
 
-    var periods = years * 12
+    var n1 = Math.pow((1 + (i/12)), (n*12));
     
-    var n1 = Math.pow (1 + monthlyInterestRate, periods)
+    var numerator = p * n1 * (i/12);
     
-    var numerator = principal * n1 * monthlyInterestRate
+    var denominator = n1 - 1;
     
-    var denominator = n1 - 1
-    
-    var monthlyRate = numerator/denominator
+    var monthlyRate = numerator / denominator ;
 
     if (creditScore > 740) {
         monthlyRate *= 0.95;
-        console.log('perfect credit');
+        
     }
     
     
     else if (creditScore < 660) {
         monthlyRate *= 1.05;
-        console.log('bad credit');
+        
     }
     
     else {
         console.log('average credit')
     }
     
-    console.log(name,"your monthly rate is $",monthlyRate.toFixed(2))
+    return console.log(name,"your monthly rate is $",monthlyRate.toFixed(2))
     
     
 }    
 
-myCalculator(150000, 0.05, 20, 800);
+myCalculatorTwo(150000, 0.05, 20, 500);
 
 
 
@@ -187,43 +180,40 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
 
 /* <---Reference the code below--->
+
 for (let i= 0; i < 5; i++) {
-    console.log('hello world'
+    console.log('hello world')
+}
 
 }*/ 
 
-function variableInterestRate() {
+function variableInterestRate(p, i, n) {
+
     
-    var periods = years * 12
+    let n1 = Math.pow((1 + (i/12)), (n*12))
     
-    var n1 = Math.pow (1 + monthlyInterestRate, periods)
+    let numerator = p * n1 * (i/12);
+    
+    let denominator = n1 - 1;
+    
+    let monthlyRate = numerator / denominator ;
 
-    var numerator = principal * n1 * monthlyInterestRate    
-
-    var denominator = n1 - 1
-
-    var monthlyRate = numerator/denominator
-
-    if (creditScore > 740) {
-    monthlyRate *= 0.95;
-    console.log('perfect credit');
-}
-
-
-    else if (creditScore < 660) {
-    monthlyRate *= 1.05;
-    console.log('bad credit');
-}
-
-    else {
-    console.log('average credit')
-}
-
-
-console.log("$",monthlyRate.toFixed(2))
-
+    return monthlyRate;
 
 }
+
+    for (let d= .02; d <.06; d+=0.005){
+
+
+    console.log(name,"with an interest rate of",d.toFixed(3),"your monthly variable rate is $", variableInterestRate(200000,d.toFixed(2),30));
+
+    }
+
+
+variableInterestRate(200000, 0.04, 30); 
+
+
+
 
 
 
@@ -241,3 +231,8 @@ console.log("$",monthlyRate.toFixed(2))
 
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+
+
+
+
+
