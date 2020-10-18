@@ -4,8 +4,12 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
+var log = console.log;
 
-
+var principal = 200000;
+var interestRate = 0.05;
+var years = 30;
+var name = "Cody"
 
 
 // 🏡 Task 1.5: Simple Math
@@ -15,7 +19,8 @@
 (2) Create another variable called `periods` and give it the value of years*12.
 */
 
-
+var monthlyInterestRate = interestRate / 12;
+var periods = years * 12;
 
 
 // 🏡 Task 2: Harder Math
@@ -35,7 +40,11 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
-
+var n1 = (1 + monthlyInterestRate)**periods;
+var numerator = principal * n1 * monthlyInterestRate;
+var denominator = n1 - 1;
+var monthlyRate = numerator/denominator
+log(monthlyRate)
 
 
 // 🏡 Task 3: Function
@@ -44,8 +53,9 @@ When your math is correct, monthlyRate will equal 1073.64
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-
-
+function mortgageCalculator () {
+    log(name+", your monthly rate is $"+monthlyRate)
+}
 
 
 // 🏡 Task 4: Arguments and Parameters
@@ -55,7 +65,20 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
+function mortgageCalculator2 (P, I, N) {
 
+    let periods = N * 12;
+    let interest = I / 12;
+    let N1 = (1 + interest) ** periods;
+    let numerator = P * N1 * interest;
+    let denominator = N1 - 1;
+    let monthlyRate = numerator/denominator
+
+    
+    log(name+", your monthly rate is $"+monthlyRate)
+}
+
+mortgageCalculator2(200000, 0.05, 30)
 
 
 
