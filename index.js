@@ -84,9 +84,11 @@ function calculations(principal, interestRate, years) {
   const n4 = principal * n3;
   const n5 = n2 - 1;
   let monthlyRate = n4 / n5;
+  return monthlyRate;
 }
+const result4 = calculations(200000, 0.05, 30);
+console.log(result4);
 
-calculations(200000, 0.05, 30);
 // 🏡 Task 5: Conditionals
 /* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
 
@@ -94,6 +96,31 @@ Then, add control flow within your function such that IF creditScore is above 74
 
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
+
+function calculatorWithCreditScore(
+  principal,
+  interestRate,
+  years,
+  creditScore
+) {
+  if (creditScore > 740) {
+    interestRate = interestRate * 0.95;
+  } else if (creditScore < 660) {
+    interestRate = interestRate * 1.05;
+  }
+  const name = "Natalia Golebiewski";
+  let monthlyInterestRate = interestRate / 12;
+  let periods = years * 12;
+  const n1 = 1 + monthlyInterestRate;
+  const n2 = Math.pow(n1, periods);
+  const n3 = monthlyInterestRate * n2;
+  const n4 = principal * n3;
+  const n5 = n2 - 1;
+  let monthlyRate = n4 / n5;
+  return monthlyRate;
+}
+const task5 = calculatorWithCreditScore(200000, 0.05, 30, 770);
+console.log(task5);
 
 // 🏡 Task 6: Loops
 /* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
