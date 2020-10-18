@@ -53,9 +53,6 @@ log(monthlyRate)
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-function mortgageCalculator () {
-    log(name+", your monthly rate is $"+monthlyRate)
-}
 
 
 // 🏡 Task 4: Arguments and Parameters
@@ -65,8 +62,8 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-function mortgageCalculator2 (P, I, N) {
-
+function mortgageCalculator (P, I, N, C) {
+   
     let periods = N * 12;
     let interest = I / 12;
     let N1 = (1 + interest) ** periods;
@@ -74,11 +71,17 @@ function mortgageCalculator2 (P, I, N) {
     let denominator = N1 - 1;
     let monthlyRate = numerator/denominator
 
+    if (C > 740) {
+        monthlyRate = monthlyRate * .95
+    }
+    else if ( C < 660) {
+        monthlyRate = monthlyRate * 1.05
+    }
     
     log(name+", your monthly rate is $"+monthlyRate)
 }
 
-mortgageCalculator2(200000, 0.05, 30)
+
 
 
 
@@ -109,8 +112,36 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
+function variableInterestRate (P, I, N, C) {
+   
+
+        var i;
+        for (i=0; i < 10; i++){
+
+        let periods = N * 12;
+        let interest = I / 12;
+        let N1 = (1 + interest) ** periods;
+        let numerator = P * N1 * interest;
+        let denominator = N1 - 1;
+        let monthlyRate = numerator/denominator
+
+        if (C > 740) {
+            monthlyRate = monthlyRate * .95
+        }
+        else if ( C < 660) {
+            monthlyRate = monthlyRate * 1.05
+    }
+    
+    
+        log(name+", with and interest rate of "+I.toFixed(3)+" your monthly rate is $"+monthlyRate)
+        I = I + .005
+    }
 
 
+    
+}
+
+variableInterestRate(200000, .05, 30)
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
