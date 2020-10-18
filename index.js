@@ -50,26 +50,34 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 {let p = (200000);
- let i = (0.05);  
- let years = (30);
- let n = (years * 12);   
- let n1 = (i * [1 + i]) ^ n;
- let numerator = (p * n1 *);
- let denominator = (n1 - 1);
- let monthlyRate = (numerator / denominator);
- console.log(monthlyRate);}
-
-
+   let i = (0.05 / 12);
+   let n = (30 * 12);   
+   let n1 = (1 + i)**n;
+   let numerator = [p * (n1 * i)];
+   let denominator = (n1 - 1);
+   let monthlyRate = (numerator / denominator);
+   console.log(monthlyRate);
+}
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
-//I wrote this here.
-//function mortgageCalculator (){let ___=___;
-//return ___;}
-//console.log (mortgageCalculator);
+function mortgageCalculator(){
+    let p = (200000);
+    let i = (0.05 / 12);
+    let n = (30 * 12);
+    let n1 = (1 + i) ** n;
+    let numerator = [p * (n1 * i)];
+    let denominator = (n1 - 1);
+    let monthlyRate = (numerator / denominator);
+    let name = 'Mariam, ';
+    let string = 'your monthly rate is $'
+    let sentence = (name + string + monthlyRate);
+    return sentence;
+}
+console.log(mortgageCalculator());
 
 
 
@@ -80,9 +88,17 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-//I wrote this here
-//const mortgageCalculator = function (P, I, N){return 200000, 0.05, 30};
-//console.log(mortgageCalculator ()); 
+var mortgageCalculator = function(P,I,N){
+    let p = (200000);
+    let i = (0.05 / 12);
+    let n = (30 * 12);
+    let n1 = (1 + i) ** n;
+    let numerator = [p * (n1 * i)];
+    let denominator = (n1 - 1);
+    let monthlyRate = (numerator / denominator);
+    console.log(monthlyRate);
+    return (P,I,N);}
+    console.log(mortgageCalculator(200000, 0.05, 30));
 
 
 
@@ -93,7 +109,25 @@ Then, add control flow within your function such that IF creditScore is above 74
 
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
-
+/*var mortgageCalculator = function(P, I, N, creditScore){
+    let creditScore= (<= 800);
+    let p = (200000);
+    let i = (0.05 / 12);
+    let n = (30 * 12);
+    let n1 = (1 + i) ** n;
+    let numerator = [p * (n1 * i)];
+    let denominator = (n1 - 1);
+    let monthlyRate = (numerator / denominator);
+    console.log(monthlyRate);
+    return [P*[(1+I/12)**N]*(I/12)] / ([(1+I/12)**N]-1)};
+console.log(mortgageCalculator(200000, 0.05, 30)); 
+let ___=___;
+let ___=___;
+if (___=___);
+{____=____};
+else if (___=___)_;
+{_____=___}
+else console.log{___};*/
 
 
 
