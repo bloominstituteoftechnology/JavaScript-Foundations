@@ -68,11 +68,11 @@ function mortgageCalculator(principal, interestRate, years, creditScore)
         interestRate = interestRate;
     }  
        
-
-    // console.log (name + ', your monthly rate is $' + (monthlyRate).toFixed(2));
+// console.log (name + ', your monthly rate is $' + (monthlyRate).toFixed(2));
+    
     return monthlyRate;
 }
-// mortgageCalculator(200000, 0.05, 30, 700);
+mortgageCalculator(200000, 0.05, 30, 700);
 
 
 
@@ -85,7 +85,7 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-// mortgageCalculator(200000, 0.05, 30, 650);
+mortgageCalculator(200000, 0.05, 30, 650);
 
 
 
@@ -118,34 +118,24 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 */
 
 function variableInterestRate(principal, interestRate, years, creditScore) { 
-    // let monthlyInterestRate = (interestRate / 12);
-    // let periods = (years * 12);
-    // let n1 = Math.pow((1 + monthlyInterestRate) , periods);
-    // let numerator = (principal * n1 * monthlyInterestRate);
-    // let denominator = (n1 - 1);
-    // let monthlyRate = (numerator / denominator);
-
-    // if (creditScore > 740) {
-    //     interestRate = (interestRate * 0.95);
-    // }    
-    // else if (creditScore < 660) {
-    //     interestRate = (interestRate * 1.05);
-    // }
-    // else {
-    //     interestRate = interestRate;
-    // }
-
+    if (creditScore > 740) {
+        interestRate = (interestRate * 0.95);
+    }    
+    else if (creditScore < 660) {
+        interestRate = (interestRate * 1.05);
+    }
+    else {
+        interestRate = interestRate;
+    }  
     let variableInterest= interestRate - .02;
     for (i= 1; i < 10; i++){  
     let monthlyRate = mortgageCalculator(principal, variableInterest, years, creditScore);
     console.log (name + ', at an interest rate of ' + variableInterest.toFixed(3) + ", your monthly rate is $" + monthlyRate.toFixed(0));
-    variableInterest += 0.005;
-    
-    
+    variableInterest += 0.005;    
     }
 }
 
-variableInterestRate(200000, 0.04, 30);
+variableInterestRate(200000, 0.04, 30, 700);
 
 
 
