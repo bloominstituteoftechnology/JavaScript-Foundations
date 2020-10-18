@@ -4,8 +4,12 @@
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
 
+var log = console.log;
 
-
+var principal = 200000;
+var interestRate = 0.05;
+var years = 30;
+var name = "Cody"
 
 
 // 🏡 Task 1.5: Simple Math
@@ -15,7 +19,8 @@
 (2) Create another variable called `periods` and give it the value of years*12.
 */
 
-
+var monthlyInterestRate = interestRate / 12;
+var periods = years * 12;
 
 
 // 🏡 Task 2: Harder Math
@@ -35,7 +40,11 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
-
+var n1 = (1 + monthlyInterestRate)**periods;
+var numerator = principal * n1 * monthlyInterestRate;
+var denominator = n1 - 1;
+var monthlyRate = numerator/denominator
+log(monthlyRate)
 
 
 // 🏡 Task 3: Function
@@ -46,14 +55,31 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 
 
 
-
-
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
 
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
+
+function mortgageCalculator (P, I, N, C) {
+   
+    let periods = N * 12;
+    let interest = I / 12;
+    let N1 = (1 + interest) ** periods;
+    let numerator = P * N1 * interest;
+    let denominator = N1 - 1;
+    let monthlyRate = numerator/denominator
+
+    if (C > 740) {
+        monthlyRate = monthlyRate * .95
+    }
+    else if ( C < 660) {
+        monthlyRate = monthlyRate * 1.05
+    }
+    
+    log(name+", your monthly rate is $"+monthlyRate)
+}
 
 
 
@@ -86,8 +112,36 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
+function variableInterestRate (P, I, N, C) {
+   
+
+        var i;
+        for (i=0; i < 10; i++){
+
+        let periods = N * 12;
+        let interest = I / 12;
+        let N1 = (1 + interest) ** periods;
+        let numerator = P * N1 * interest;
+        let denominator = N1 - 1;
+        let monthlyRate = numerator/denominator
+
+        if (C > 740) {
+            monthlyRate = monthlyRate * .95
+        }
+        else if ( C < 660) {
+            monthlyRate = monthlyRate * 1.05
+    }
+    
+    
+        log(name+", with and interest rate of "+I.toFixed(3)+" your monthly rate is $"+monthlyRate)
+        I = I + .005
+    }
 
 
+    
+}
+
+variableInterestRate(200000, .05, 30)
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
