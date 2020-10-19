@@ -138,14 +138,33 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-// 🌟🌟🌟 STRETCH 🌟🌟🌟//
+function variableInterestRate(principal, interestRate, years, creditScore) {
+  const name = "Natalia Golebiewski";
+  let monthlyInterestRate = interestRate / 12;
+  let periods = years * 12;
+  const n1 = 1 + monthlyInterestRate;
+  const n2 = Math.pow(n1, periods);
+  const n3 = monthlyInterestRate * n2;
+  const n4 = principal * n3;
+  const n5 = n2 - 1;
+  let monthlyRate = n4 / n5;
 
-/* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
+  for (i = 0; i < 10; i++) {
+    if (creditScore > 740) {
+      monthlyRate = monthlyRate * 0.95;
+    } else if (creditScore < 660) {
+      monthlyRate = monthlyRate * 1.05;
+    }
 
-/*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
-
-/* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
-
-/* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
-
-/* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+    console.log(
+      name,
+      ", with an interest rate of",
+      interestRate.toFixed(4),
+      "your monthly rate is",
+      monthlyRate.toFixed(2)
+    );
+    interestRate = interestRate + 0.005;
+  }
+  return monthlyRate;
+}
+variableInterestRate(200000, 0.05, 30, 760);
