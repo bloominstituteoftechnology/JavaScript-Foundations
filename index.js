@@ -102,6 +102,7 @@ Then, add control flow within your function such that IF creditScore is above 74
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
 
+
 let mortgageCalculator = function(p, i, n, c){
     let principal = p;
     let interestRate = i;
@@ -117,7 +118,7 @@ let mortgageCalculator = function(p, i, n, c){
     let periods = (years * 12);let n1 = Math.pow ((1+ monthlyInterestRate), periods);
     let numerator = (principal * n1 * monthlyInterestRate)
     let denominator = (n1 - 1);
-    let monthlyRate = (numerator / denominator)
+    let monthlyRate = (numerator / denominator);
     let result = (Math.round(monthlyRate * 100) / 100).toFixed(2);
 
 
@@ -127,7 +128,7 @@ let mortgageCalculator = function(p, i, n, c){
 }
 
 mortgageCalculator(200000, 0.05, 30, 780)
-
+console.log(result)
 
 // 🏡 Task 6: Loops
 /* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
@@ -163,7 +164,7 @@ let variableInterestRate = function(p, i, n){
         let numerator = (principal * n1 * monthlyInterestRate)
         let denominator = (n1 - 1);
         let monthlyRate = (numerator / denominator);
-        var result = (Math.round(monthlyRate * 100) / 100).toFixed(0);
+        let result = Number(Math.round(monthlyRate * 100) / 100).toFixed(0);
         return result;
 
 
@@ -171,27 +172,66 @@ let variableInterestRate = function(p, i, n){
     }
 }
 
-variableInterestRate(200000, 0.04, 30);
-
+var variableResult = Number(variableInterestRate(200000, 0.04, 30));
+console.log(variableResult)
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
 /* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
 
 /*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
+// let feeResult = "";
+
+
 let additionalFees = function(t, i, h) {
-    tax = t;
-    insurance = i;
-    hoa = h;
-    var feeResult = (tax + insurance + hoa);
-    return feeResult;
+    let tax = t;
+    let insurance = i;
+    let hoa = h;
+    let feeResult = Number(tax + insurance + hoa);
+    console.log(`Your total cost is ${(feeResult + variableResult)}`);
+
+    
 }
 
 additionalFees(95, 250, 200)
-console.log(`Your total monthly spending is ${feeResult}`)
+
+
 /* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
+// let maxLoan = function(a, t){
 
-
+function maxLoan(monthlyPayment, interestRate){
+    let possiblePrinciple = 0;
+    let monthlyRate = 0;
+    do {
+        let monthlyRate = mortgageCalc(possiblePrinciple, interestRate);
+         console.log(monthlyRate);
+        if (monthlyRate >= monthlyPayment) {
+            return `Your max loan is ${possiblePrinciple}.`;
+        } else {
+            possiblePrinciple += 1;
+        }
+    } while (monthlyRate < monthlyPayment);
+ }
+ 
+ function mortgageCalc(principal, interestRate) {
+     
+     let years = 30; 
+     let monthlyInterestRate = (interestRate / 12);
+     let periods = (years * 12);
+     let n1 = Math.pow ((1+ monthlyInterestRate), periods);
+     let numerator = (principal * n1 * monthlyInterestRate);
+     let denominator = (n1 - 1);
+     let monthlyRate = (numerator / denominator);
+     monthlyRate = monthlyRate.toFixed(2);
+ 
+    return monthlyRate;
+     
+ }
+ 
+ var output = maxLoan(500, 0.05);
+ console.log(output);
+ 
+// console.log(`maxLoan is ${newResult}`);
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
 
 
