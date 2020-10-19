@@ -149,61 +149,27 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */ 
+const variableInterestRate = function (name, principal, interestRate, years) {
 
-function variableInterestRate() 
-{
-  
-//for loop engine that turns function over 10 times
- for (let i = 0; i < 10;  i += 1)
- {  
-    function mortgageCalculator(name, principle, interestRate, years, creditScore)
-  {
-//variables to spread input interest rate and years over 12 months
-    let monthlyInterestRate = interestRate / 12;
-    let periods = years * 12;
+    //for loop engine using interestRate as the counter
+    for (let i = interestRate - 0.02; i<= interestRate + 0.02; i += 0.005 ) 
 
-//credit score adjustment loop
-    if (creditScore > 740) {
-        monthlyInterestRate = monthlyInterestRate * 0.95;
+    {//for loop beginning
+    //set variable values
+    let monthlyInterestRate = i/12; 
+    let periods = years*12;
 
-        } else if (creditScore < 600) {
-        monthlyInterestRate = monthlyInterestRate * 1.05;
-
-        } else if (creditScore >= 600 && creditScore <= 740) {
-        // No adjustment placeholder only
-        }
-
-//formula calculation
-        let n1 = Math.pow((1 + monthlyInterestRate), periods);
-        let numerator = (principle * n1 * monthlyInterestRate);
-        let denominator = (n1 - 1);
-        let monthlyRate = (numerator / denominator);
-
-//creates bottom of the variable interest rate progression
-        let variableInterestRate = interestRate - 0.02;
-
-//Rounders
-        roundedVariableInterest = variableInterestRate.toFixed(3);
-        roundedMonthlyRate = monthlyRate.toFixed(2);
-      
-//data return
-    return `${name}, with an interest rate of ${roundedVariableInterest}, your monthly rate is ${roundedMonthlyRate}`;
+    //formula 
+    let n1 = Math.pow(1 + monthlyInterestRate, periods);
+    let numerator =  principal * n1 * monthlyInterestRate;
+    let denominator = n1 -1;
+    let monthlyRate = numerator/denominator;
     
-//adds and equalizes interestRate with 0.005
-
-       interestRate += 0.005;
+    //output with consolidated rounders. 
+    console.log (`${name}, with an interest rate of ${i.toFixed(3)}, your monthly rate is $${Math.round(monthlyRate)}`);
     }
-// output
-  var output = mortgageCalculator('Oscar', 200000, 0.05, 30, 530);
-  console.log(output);
- }
 }
-//function call to execute program
-
-variableInterestRate();
-
-
-
+variableInterestRate ('Tony', 200000, 0.04, 30);
 
 
 
