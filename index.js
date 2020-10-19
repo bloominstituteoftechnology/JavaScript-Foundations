@@ -16,8 +16,6 @@
 */
 
 
-
-
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe (also below) to run calculations on your numbers. Save the final value into a variable called monthlyRate. 
 
@@ -34,10 +32,25 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
+let name = 'kenneth'; 
+let P = 200000;
+let I = 0.05;
+let Y = 30;
+let I1 = 1 + I;
+let N = Y*12; 
+
+let monthlyInterestRate = I/12;
+
+let n1 = (1 + monthlyInterestRate)^N;
+let numerator = P * n1 * monthlyInterestRate;
+let denominator = n1 - 1;
+let monthlyRate =  numerator/denominator;
+
+morgageCalculator = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
 
 
 
-
+console.log (morgageCalculator)
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
 
