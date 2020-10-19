@@ -3,8 +3,10 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
-
-
+let principal = 200000;         // principal
+let annualInterestRate = 0.05;  // interestRate
+let loanDurationYears = 30;     // years
+let name = "Molly";
 
 
 
@@ -15,6 +17,9 @@
 (2) Create another variable called `periods` and give it the value of years*12.
 */
 
+const monthsInYear = 12;
+const monthlyInterestRate = annualInterestRate / monthsInYear;      // I
+const paymentPeriods = loanDurationYears * monthsInYear;            // N
 
 
 
@@ -35,6 +40,12 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
+const n1 = Math.pow( (1 + monthlyInterestRate), paymentPeriods); // (1 + monthlyInterestRate )^N
+const numerator = principal * n1 * monthlyInterestRate;          // p * n1 * monthlyInterestRate
+const denominator = n1 - 1;                                      // n1 - 1 
+let monthlyRate = numerator / denominator;                     // monthlyRate = numerator / denominator
+
+console.log("Step 2, monthlyRate: $", monthlyRate);
 
 
 
@@ -43,10 +54,29 @@ When your math is correct, monthlyRate will equal 1073.64
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
+function taskThreeMortgageCalculator() {
+    // Step 1
+    const principal = 200000;         // principal
+    const annualInterestRate = 0.05;  // interestRate
+    const loanDurationYears = 30;     // years
+    const name = "Molly";
+    
+    // Step 1.5
+    const monthsInYear = 12;
+    const monthlyInterestRate = annualInterestRate / monthsInYear;      // I
+    const paymentPeriods = loanDurationYears * monthsInYear;            // N
 
+    // Step 2
+    const n1 = Math.pow( (1 + monthlyInterestRate), paymentPeriods); // (1 + monthlyInterestRate )^N
+    const numerator = principal * n1 * monthlyInterestRate;          // p * n1 * monthlyInterestRate
+    const denominator = n1 - 1;                                      // n1 - 1 
+    let monthlyRate = numerator / denominator;                     // monthlyRate = numerator / denominator
 
+    return name + ", your monthly rate is " + monthlyRate;
+}
 
-
+console.log('~~~~~~~~~~~~~~~~~');
+console.log("Step 3:" + taskThreeMortgageCalculator());
 
 // 🏡 Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
@@ -54,6 +84,35 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
+
+/**
+ * Calculates monthly rate of payment for loan.
+ */
+
+function taskFourMortgageCalculator(P, I, N) {
+    // Step 1
+    const principal = P;            // principal
+    const annualInterestRate = I;   // interestRate
+    const loanDurationYears = N;    // years
+    const name = "Molly";
+    
+    // Step 1.5
+    const monthsInYear = 12;
+    const monthlyInterestRate = annualInterestRate / monthsInYear;      // I in equation
+    const paymentPeriods = loanDurationYears * monthsInYear;            // N in equation
+
+    // Step 2
+    const n1 = Math.pow( (1 + monthlyInterestRate), paymentPeriods); // (1 + monthlyInterestRate )^N
+    const numerator = principal * n1 * monthlyInterestRate;          // p * n1 * monthlyInterestRate
+    const denominator = n1 - 1;                                      // n1 - 1 
+    let monthlyRate = numerator / denominator;                     // monthlyRate = numerator / denominator
+
+    return name + ", your monthly rate is " + monthlyRate;
+}
+const stepFourResult= taskFourMortgageCalculator(200000, 0.05, 30);
+console.log('~~~~~~~~~~~~~~~~~')
+console.log("Step 4:" + stepFourResult);
+
 
 
 
@@ -66,7 +125,37 @@ Then, add control flow within your function such that IF creditScore is above 74
 
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
+function taskFiveMortgageCalculator(P, I, N, creditScore) {
+    // Step 1
+    const principal = P;            // principal
+    const annualInterestRate = I;   // interestRate
+    const loanDurationYears = N;    // years
+    const name = "Molly";
+    
+    // Step 1.5
+    const monthsInYear = 12;
+    const monthlyInterestRate = annualInterestRate / monthsInYear;      // I in equation
+    const paymentPeriods = loanDurationYears * monthsInYear;            // N in equation
 
+    // Step 2
+    const n1 = Math.pow( (1 + monthlyInterestRate), paymentPeriods); // (1 + monthlyInterestRate )^N
+    const numerator = principal * n1 * monthlyInterestRate;          // p * n1 * monthlyInterestRate
+    const denominator = n1 - 1;                                      // n1 - 1 
+    let monthlyRate = numerator / denominator;                     // monthlyRate = numerator / denominator
+
+        if (creditScore > 740){
+            monthlyRate = monthlyRate * 0.95;
+        } else if (creditScore < 660){
+            monthlyRate = monthlyRate * 1.05;
+        } else if (creditScore > 660 && creditScore < 740) {
+            monthlyRate = monthlyRate;
+        }
+
+    return name + ", your monthly rate is " + monthlyRate;
+}
+const stepFiveResult= taskFiveMortgageCalculator(200000, 0.05, 30, 800);
+console.log('~~~~~~~~~~~~~~~~~')
+console.log("Step 5:" + stepFiveResult);
 
 
 
@@ -85,7 +174,33 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
+function variableInterestRate(P, I, N) {
+    // Step 1
+    const principal = P;            // principal
+    const annualInterestRate = I;   // interestRate
+    const loanDurationYears = N;    // years
+    const name = "Molly";
+    
+    // Step 1.5
+    const monthsInYear = 12;
+    const monthlyInterestRate = annualInterestRate / monthsInYear;      // I in equation
+    const paymentPeriods = loanDurationYears * monthsInYear;            // N in equation
 
+    // Step 2
+    const n1 = Math.pow( (1 + monthlyInterestRate), paymentPeriods); // (1 + monthlyInterestRate )^N
+    const numerator = principal * n1 * monthlyInterestRate;          // p * n1 * monthlyInterestRate
+    const denominator = n1 - 1;                                      // n1 - 1 
+    let monthlyRate = numerator / denominator;                     // monthlyRate = numerator / denominator
+
+  
+ 
+
+    return name + ", your monthly rate is " + monthlyRate;
+}
+const stepSixResult= variableInterestRate(200000, 0.05, 30, 800);
+console.log('~~~~~~~~~~~~~~~~~')
+console.log("Step 6:" + stepSixResult);
+console.log(name + ", with an interest rate of 0.02, your monthly rate is $" );
 
 
 
