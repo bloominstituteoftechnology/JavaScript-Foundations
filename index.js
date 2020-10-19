@@ -160,6 +160,7 @@ function mortgageCalculator(name, principal, interestRate, years, creditScore) {
 
     let n1 = Math.pow((1 + monthlyInterestRate),periods);
     let numerator = principal * n1 * monthlyInterestRate;
+    console.log(numerator);
     let denominator = n1 - 1;
 
     if (denominator === 0) {     // edge case for zero, denominator cannot be 0 
