@@ -174,7 +174,33 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
+function variableInterestRate(P, I, N) {
+    // Step 1
+    const principal = P;            // principal
+    const annualInterestRate = I;   // interestRate
+    const loanDurationYears = N;    // years
+    const name = "Molly";
+    
+    // Step 1.5
+    const monthsInYear = 12;
+    const monthlyInterestRate = annualInterestRate / monthsInYear;      // I in equation
+    const paymentPeriods = loanDurationYears * monthsInYear;            // N in equation
 
+    // Step 2
+    const n1 = Math.pow( (1 + monthlyInterestRate), paymentPeriods); // (1 + monthlyInterestRate )^N
+    const numerator = principal * n1 * monthlyInterestRate;          // p * n1 * monthlyInterestRate
+    const denominator = n1 - 1;                                      // n1 - 1 
+    let monthlyRate = numerator / denominator;                     // monthlyRate = numerator / denominator
+
+  
+ 
+
+    return name + ", your monthly rate is " + monthlyRate;
+}
+const stepSixResult= variableInterestRate(200000, 0.05, 30, 800);
+console.log('~~~~~~~~~~~~~~~~~')
+console.log("Step 6:" + stepSixResult);
+console.log(name + ", with an interest rate of 0.02, your monthly rate is $" );
 
 
 
