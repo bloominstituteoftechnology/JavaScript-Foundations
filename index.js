@@ -43,7 +43,7 @@ When your math is correct, monthlyRate will equal 1073.64
 const n1 = Math.pow( (1 + monthlyInterestRate), paymentPeriods); // (1 + monthlyInterestRate )^N
 const numerator = principal * n1 * monthlyInterestRate;          // p * n1 * monthlyInterestRate
 const denominator = n1 - 1;                                      // n1 - 1 
-const monthlyRate = numerator / denominator;                     // monthlyRate = numerator / denominator
+let monthlyRate = numerator / denominator;                     // monthlyRate = numerator / denominator
 
 console.log("Step 2, monthlyRate: $", monthlyRate);
 
@@ -70,7 +70,7 @@ function taskThreeMortgageCalculator() {
     const n1 = Math.pow( (1 + monthlyInterestRate), paymentPeriods); // (1 + monthlyInterestRate )^N
     const numerator = principal * n1 * monthlyInterestRate;          // p * n1 * monthlyInterestRate
     const denominator = n1 - 1;                                      // n1 - 1 
-    const monthlyRate = numerator / denominator;                     // monthlyRate = numerator / denominator
+    let monthlyRate = numerator / denominator;                     // monthlyRate = numerator / denominator
 
     return name + ", your monthly rate is " + monthlyRate;
 }
@@ -105,7 +105,7 @@ function taskFourMortgageCalculator(P, I, N) {
     const n1 = Math.pow( (1 + monthlyInterestRate), paymentPeriods); // (1 + monthlyInterestRate )^N
     const numerator = principal * n1 * monthlyInterestRate;          // p * n1 * monthlyInterestRate
     const denominator = n1 - 1;                                      // n1 - 1 
-    const monthlyRate = numerator / denominator;                     // monthlyRate = numerator / denominator
+    let monthlyRate = numerator / denominator;                     // monthlyRate = numerator / denominator
 
     return name + ", your monthly rate is " + monthlyRate;
 }
@@ -125,7 +125,7 @@ Then, add control flow within your function such that IF creditScore is above 74
 
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
-function taskFiveMortgageCalculator(P, I, N) {
+function taskFiveMortgageCalculator(P, I, N, creditScore) {
     // Step 1
     const principal = P;            // principal
     const annualInterestRate = I;   // interestRate
@@ -141,11 +141,19 @@ function taskFiveMortgageCalculator(P, I, N) {
     const n1 = Math.pow( (1 + monthlyInterestRate), paymentPeriods); // (1 + monthlyInterestRate )^N
     const numerator = principal * n1 * monthlyInterestRate;          // p * n1 * monthlyInterestRate
     const denominator = n1 - 1;                                      // n1 - 1 
-    const monthlyRate = numerator / denominator;                     // monthlyRate = numerator / denominator
+    let monthlyRate = numerator / denominator;                     // monthlyRate = numerator / denominator
+
+        if (creditScore > 740){
+            monthlyRate = monthlyRate * 0.95;
+        } else if (creditScore < 660){
+            monthlyRate = monthlyRate * 1.05;
+        } else if (creditScore > 660 && creditScore < 740) {
+            monthlyRate = monthlyRate;
+        }
 
     return name + ", your monthly rate is " + monthlyRate;
 }
-const stepFiveResult= taskFiveMortgageCalculator(200000, 0.05, 30);
+const stepFiveResult= taskFiveMortgageCalculator(200000, 0.05, 30, 800);
 console.log('~~~~~~~~~~~~~~~~~')
 console.log("Step 5:" + stepFiveResult);
 
