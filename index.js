@@ -3,8 +3,10 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
-
-
+var principal = 200000;
+var interestRate = 0.05;
+var years = 30;
+var person = "Sheldon Cook";
 
 
 
@@ -14,6 +16,7 @@
 (1) Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
 (2) Create another variable called `periods` and give it the value of years*12.
 */
+var monthlyInterestRate 
 
 
 
