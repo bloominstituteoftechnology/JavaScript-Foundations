@@ -103,3 +103,46 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+
+
+var monthlyRate = 0;
+const name = "Alea";
+const months = 12;
+// let name = prompt("What is your name?");
+// let p = prompt("What is the principal amount?");
+// let interest = prompt("What is the interest?");
+// let years = prompt(How many years is your lone?");
+// let credit = prompt("What is your credit score");
+
+function mortgageCalculator(p, interest, years){
+    var monthlyInterestRate = interest / months;
+    var periods = years*months;
+    var finance = Math.pow(1 + monthlyInterestRate, periods);
+    var numerator = monthlyInterestRate * finance;
+    var denominator = finance -1;
+    monthlyRate = p * (numerator/denominator);
+    console.log(name+", your monethly rate is"+monthlyRate.toFixed(2));
+    return monthlyRate;
+}
+
+function variableInterestRate(p, interest, years, credit){
+    for (let inc=0; inc<10; inc++){
+        console.log(name+", with an interest rate of "+interest.toFixed(3)+", your monthly rate is "+monthlyRate.toFixed(2));
+        if (credit > 740){
+            interest =  interest - 0.005;
+        }
+        else if (credit < 660){
+            interest = interest + 0.005;
+        }
+
+        var monthlyInterestRate = interest / months;
+        var periods = years*months;
+        var finance = Math.pow(1 + monthlyInterestRate, periods);
+        var numerator = monthlyInterestRate * finance;
+        var denominator = finance -1;
+        monthlyRate = p * (numerator/denominator);
+    }
+}
+
+mortgageCalculator(200000, 0.05, 30);
+variableInterestRate(200000, 0.05, 30, 500);
